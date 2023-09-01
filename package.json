@@ -1,7 +1,7 @@
 {
   "name": "semester-project-noroff",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Bidzone auction website application empowers users to seamlessly bid, discover unique items, and relish the excitement of competitive online auctions within an intuitive and user-friendly interface.",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -9,16 +9,22 @@
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server",
+    "start": "live-server",
+    "dev": "npm-run-all --parallel watch start"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["auction", "bidding", "Bidzone", "deals", "online bidding"],
+  "author": "Sabina Kutniauske <saibia@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.48.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
-    "prettier": "^3.0.3"
+    "live-server": "^1.2.2",
+    "prettier": "^3.0.3",
+    "sass": "^1.66.1"
   },
   "lint-staged": {
     "*.js": [
@@ -31,5 +37,8 @@
     "*.scss": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.1"
   }
 }
