@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Log in to your Bidzone account for exciting bidding, personalized settings, and collectibles."
+    />
+    <meta
+      name="keywords"
+      content="Bidzone, login, bidding online, secure login, member login"
+    />
+    <meta name="author" content="Sabina Kutniauske" />
+    <title>Bidzone | Login</title>
+    <link rel="icon" href="../../assets/images/Favicon.png" />
+    <link rel="stylesheet" href="../../dist/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <script
+      src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-xxl">
+          <a href="/" class="navbar-brand"
+            ><img
+              src="../../assets/images/Bidzone-logo.png"
+              alt="Bidzone logo"
+              width="180"
+          /></a>
+          <!-- Toggle button for mobile navigation -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#main-nav"
+            aria-controls="main-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar links -->
+          <div
+            class="collapse navbar-collapse justify-content-md-end align-items-center"
+            id="main-nav"
+          >
+            <ul class="navbar-nav list-group">
+              <li>
+                <form class="d-flex me-md-5">
+                  <input
+                    class="form-control me-2 rounded-pill"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button
+                    class="btn btn-outline-primary rounded-pill px-4"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </form>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="btn btn-outline-primary me-md-3 ms-md-5 rounded-pill px-4"
+                  >Login</a
+                >
+              </li>
+              <li>
+                <a href="#" class="btn btn-danger rounded-pill px-4">Sign up</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Login form -->
+      <section>
+        <div class="container-lg">
+          <div class="text-center">
+            <h1 class="display-5">Login to Bidzone</h1>
+          </div>
+          <div class="row justify-content-center">
+            <form class="col-md-6 bg-dark p-4 rounded-3" action="../account">
+              <label for="inputEmail" class="form-label text-white"
+                >Email</label
+              >
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"
+                    ><i class="bi bi-envelope-fill"></i
+                  ></span>
+                </div>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputEmail"
+                  aria-describedby="emailHelp"
+                  required
+                />
+              </div>
+
+              <label for="inputPassword" class="form-label text-white"
+                >Password</label
+              >
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"
+                    ><i class="bi bi-lock-fill"></i
+                  ></span>
+                </div>
+                <input
+                  type="password"
+                  class="form-control"
+                  aria-label="Password"
+                  aria-describedby="basic-addon1"
+                  id="inputPassword"
+                  minlength="8"
+                  required
+                />
+              </div>
+              <div class="mb-3 form-check d-flex justify-content-between">
+                <div>
+                  <input type="checkbox" class="form-check-input" id="check" />
+                  <label class="form-check-label text-white" for="check"
+                    >Remember me</label
+                  >
+                </div>
+                <a href="#" class="text-white text-decoration-none"
+                  >Forgot password?</a
+                >
+              </div>
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-secondary w-50 mt-3">
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Create account -->
+      <section class="container-sm text-center">
+        <p class="text-dark mt-5 border-top py-2 d-inline-block px-5">
+          Not a memeber?<a href="../register" class="text-secondary ms-2"
+            >Create account</a
+          >
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

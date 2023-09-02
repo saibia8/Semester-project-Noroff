@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Join Bidzone today to create your account. Unlock thrilling bids, personalized settings, & exclusive deals."
+    />
+    <meta
+      name="keywords"
+      content="Bidzone, sign up, register, account creation, join Bidzone, account creation"
+    />
+    <meta name="author" content="Sabina Kutniauske" />
+    <title>Bidzone | Register</title>
+    <link rel="icon" href="../../assets/images/Favicon.png" />
+    <link rel="stylesheet" href="../../dist/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <script
+      src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-xxl">
+          <a href="/" class="navbar-brand"
+            ><img
+              src="../../assets/images/Bidzone-logo.png"
+              alt="Bidzone logo"
+              width="180"
+          /></a>
+          <!-- Toggle button for mobile navigation -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#main-nav"
+            aria-controls="main-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar links -->
+          <div
+            class="collapse navbar-collapse justify-content-md-end align-items-center"
+            id="main-nav"
+          >
+            <ul class="navbar-nav list-group">
+              <li>
+                <form class="d-flex me-md-5">
+                  <input
+                    class="form-control me-2 rounded-pill"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button
+                    class="btn btn-outline-primary rounded-pill px-4"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </form>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="btn btn-outline-primary me-md-3 ms-md-5 rounded-pill px-4"
+                  >Login</a
+                >
+              </li>
+              <li>
+                <a href="#" class="btn btn-danger rounded-pill px-4">Sign up</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Register form -->
+      <section>
+        <div class="container-lg">
+          <div class="text-center">
+            <h1 class="display-5">Create account</h1>
+          </div>
+          <div class="row justify-content-center">
+            <form class="col-md-6 bg-dark p-4 rounded-3" action="../account">
+              <label for="inputUsername" class="form-label text-white"
+                >Username</label
+              >
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"
+                    ><i class="bi bi-person-fill"></i
+                  ></span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputUsername"
+                  aria-label="Username"
+                  required
+                />
+              </div>
+
+              <label for="inputEmail" class="form-label text-white"
+                >Email</label
+              >
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"
+                    ><i class="bi bi-envelope-fill"></i
+                  ></span>
+                </div>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputEmail"
+                  aria-describedby="emailHelp"
+                  required
+                />
+              </div>
+
+              <label for="inputPassword" class="form-label text-white"
+                >Password</label
+              >
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"
+                    ><i class="bi bi-lock-fill"></i
+                  ></span>
+                </div>
+                <input
+                  type="password"
+                  class="form-control"
+                  aria-label="Password"
+                  aria-describedby="basic-addon1"
+                  id="inputPassword"
+                  minlength="8"
+                  required
+                />
+              </div>
+
+              <label for="inputPassword" class="form-label text-white"
+                >Confirm password</label
+              >
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"
+                    ><i class="bi bi-lock-fill"></i
+                  ></span>
+                </div>
+                <input
+                  type="password"
+                  class="form-control mb-3"
+                  aria-label="Password"
+                  id="inputPassword"
+                  minlength="8"
+                  required=""
+                />
+              </div>
+              <div class="form-group">
+                <label class="mb-2 text-white">
+                  <input type="checkbox" required="" class="me-2" />I accept the
+                  <a href="#">Terms of use</a> &amp;
+                  <a href="#">Privacy Policy</a>
+                </label>
+              </div>
+
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-secondary w-50 mt-3">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
