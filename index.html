@@ -13,7 +13,7 @@
     />
     <meta name="author" content="Sabina Kutniauske" />
     <title>Bidzone | Home</title>
-    <link rel="icon" href="/assets/images/Favicon.png" />
+    <link rel="icon" href="assets/images/Favicon.png" />
     <link rel="stylesheet" href="dist/css/style.css" />
     <script
       src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -23,8 +23,9 @@
 
   <body class="bg-light-subtle">
     <header class="sticky-top">
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container-xxl">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-xl">
+          <!-- Logo -->
           <a href="/" class="navbar-brand"
             ><img
               src="assets/images/Bidzone-logo.png"
@@ -33,51 +34,82 @@
           /></a>
           <!-- Toggle button for mobile navigation -->
           <button
-            class="navbar-toggler"
+            class="navbar-toggler border-0 shadow-none"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#main-nav"
-            aria-controls="main-nav"
-            aria-expanded="false"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <!-- Navbar links -->
+
+          <!-- Sidebar -->
           <div
-            class="collapse navbar-collapse justify-content-md-end align-items-center"
-            id="main-nav"
+            class="offcanvas offcanvas-end bg-dark"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
           >
-            <ul class="navbar-nav list-group">
-              <li>
-                <form class="d-flex me-md-5">
+            <!-- Sidebar header -->
+            <div class="offcanvas-header border-bottom bg-dark text-white">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button
+                type="button"
+                class="btn-close shadow-none text-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <!-- Sidebar body -->
+            <div
+              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0"
+            >
+              <ul
+                class="navbar-nav justify-content-xl-center align-items-center flex-grow-1 pe-3 gap-2"
+              >
+                <li class="nav-item">
+                  <a class="nav-link text-white text-uppercase fw-bold" href="#"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white text-uppercase fw-bold" href="#"
+                    >Auction</a
+                  >
+                </li>
+                <form
+                  class="d-flex flex-column flex-lg-row mt-5 mt-lg-0"
+                  role="search"
+                >
                   <input
-                    class="form-control me-2 rounded-pill"
+                    class="form-control me-2 rounded-pill px-4 mb-3 mb-lg-0"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
                   />
                   <button
-                    class="btn btn-outline-primary rounded-pill px-4"
+                    class="btn btn-outline-success rounded-pill px-4"
                     type="submit"
                   >
                     Search
                   </button>
                 </form>
-              </li>
-              <li>
+              </ul>
+
+              <!-- Login and Sign up -->
+              <div class="d-grid gap-3 d-lg-block">
                 <a
                   href="user/login"
-                  class="btn btn-outline-primary me-md-3 ms-md-5 rounded-pill px-4"
+                  class="btn btn-outline-primary rounded-pill px-4 me-lg-2"
                   >Login</a
                 >
-              </li>
-              <li>
                 <a href="user/register" class="btn btn-danger rounded-pill px-4"
                   >Sign up</a
                 >
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
