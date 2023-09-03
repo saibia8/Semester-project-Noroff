@@ -1,0 +1,10 @@
+// Theme colors
+$green-light: #2eed9d;
+$orange-light: #ffac67;
+$gray-bg: #303136;
+
+$primary: $green-light;
+$secondary: $orange-light;
+$gray-900: $gray-bg;
+// Import Boostrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
