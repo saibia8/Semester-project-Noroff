@@ -1,0 +1,9 @@
+@use "../custom" as *;
+
+// Typography
+:root {
+  --bs-body-font-family: "Roboto", sans-serif;
+}
+
+$headings-font-family: "Raleway", sans-serif;
+$display-font-family: "Raleway", sans-serif;

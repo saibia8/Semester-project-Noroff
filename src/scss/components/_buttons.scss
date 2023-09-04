@@ -1,0 +1,31 @@
+@use "../custom" as *;
+
+// Button custom styling
+.btn-style {
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+  }
+  width: 7rem;
+  padding: 0.3rem 1.5rem;
+}
+
+.btn-style:hover,
+.btn-style:active {
+  background: transparent;
+}
+
+.btn-green:hover,
+.btn-green:active {
+  color: $primary;
+}
+
+.btn-orange:hover,
+.btn-orange:active {
+  color: $secondary;
+}
+
+.btn-action:hover,
+.btn-action:active {
+  background: rgba(244, 143, 60, 0.4);
+  color: black;
+}
