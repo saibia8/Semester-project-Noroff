@@ -161,10 +161,8 @@
             <h1 class="display-7 my-4">Login to Bidzone</h1>
           </div>
           <div class="row justify-content-center">
-            <form
-              class="col-md-6 text-bg-info p-4 rounded-3"
-              action="../account"
-            >
+            <form class="col-md-6 text-bg-info p-4 rounded-3" id="loginForm">
+              <div id="message"></div>
               <label for="inputEmail" class="form-label">Email</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -174,10 +172,13 @@
                 </div>
                 <input
                   type="email"
+                  name="email"
                   class="form-control"
                   id="inputEmail"
                   aria-describedby="emailHelp"
                   required
+                  pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                  title="Only @noroff.no or @stud.noroff.no domains are allowed to login"
                 />
               </div>
 
@@ -190,6 +191,7 @@
                 </div>
                 <input
                   type="password"
+                  name="password"
                   class="form-control"
                   aria-label="Password"
                   aria-describedby="basic-addon1"
@@ -233,5 +235,6 @@
         </p>
       </section>
     </main>
+    <script src="../../src/js/index.mjs" type="module"></script>
   </body>
 </html>
