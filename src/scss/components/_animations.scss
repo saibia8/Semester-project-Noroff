@@ -1,4 +1,6 @@
-// Card hover
+@use "../custom" as *;
+
+// Card hover animation
 .card:hover,
 .card:active {
   box-shadow: 10px 5px 5px #e7e7e7;

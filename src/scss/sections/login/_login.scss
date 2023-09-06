@@ -1,5 +1,7 @@
 @use "../../custom" as *;
+@use "../navbar";
 
+// Forgot password on the form
 .forgot-password {
   color: black;
 }
@@ -7,4 +9,10 @@
 .forgot-password:hover,
 .forgot-password:active {
   color: $secondary;
+}
+
+// Create new accout link at the bottom
+.create-account:hover,
+.create-account:active {
+  font-weight: 600;
 }

@@ -24,12 +24,14 @@
   color: $secondary;
 }
 
+// Call to action button on main index(Intro section)
 .btn-action:hover,
 .btn-action:active {
   background: rgba(244, 143, 60, 0.4);
   color: black;
 }
 
+// Card bid button
 .btn-bid {
   width: 100%;
   border: 2px solid $primary;
@@ -41,6 +43,19 @@
   border: 2px solid $primary;
 }
 
-.card-heart-btn {
+// Removes default button styling on heart-like icon, log-out icon
+.card-heart-btn,
+.log-out-btn {
   all: unset;
+}
+
+// Log out button
+.log-out-btn {
+  color: $secondary;
+}
+
+.log-out-btn:hover,
+.log-out-btn:active {
+  color: $white;
+  text-decoration: underline 3px solid $primary;
 }

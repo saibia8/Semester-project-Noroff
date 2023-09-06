@@ -1,5 +1,6 @@
 @use "../custom" as *;
 
+// Heart-like icon on cards
 .heart-icon {
   position: absolute;
   right: 8px;
@@ -18,4 +19,17 @@
 .heart-icon:active {
   background-color: $secondary;
   color: $white;
+}
+
+// Log out icon
+.log-out-icon,
+.user-icon {
+  height: 25px;
+  width: 25px;
+}
+
+// User icon
+.user-icon {
+  color: $white;
+  margin-right: 2rem;
 }

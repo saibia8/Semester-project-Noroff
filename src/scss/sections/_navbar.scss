@@ -1,1 +1,11 @@
 @use "../custom" as *;
+
+// Nav link
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: $primary;
+}
