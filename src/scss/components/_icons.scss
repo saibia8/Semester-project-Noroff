@@ -1,0 +1,21 @@
+@use "../custom" as *;
+
+.heart-icon {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  color: $black;
+  background: $white;
+  border-radius: 100%;
+  z-index: 1;
+  height: 30px;
+  width: 30px;
+  align-items: center;
+  padding: 3px 0 0 7.5px;
+}
+
+.heart-icon:hover,
+.heart-icon:active {
+  background-color: $secondary;
+  color: $white;
+}

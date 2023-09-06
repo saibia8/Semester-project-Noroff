@@ -1,0 +1,7 @@
+// Card hover
+.card:hover,
+.card:active {
+  box-shadow: 10px 5px 5px #e7e7e7;
+  transform: scale(1.025);
+  transition: 400ms ease-in-out;
+}

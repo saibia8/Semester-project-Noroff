@@ -1,0 +1,10 @@
+@use "../../custom" as *;
+
+.forgot-password {
+  color: black;
+}
+
+.forgot-password:hover,
+.forgot-password:active {
+  color: $secondary;
+}

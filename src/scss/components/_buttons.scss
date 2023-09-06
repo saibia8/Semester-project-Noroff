@@ -29,3 +29,18 @@
   background: rgba(244, 143, 60, 0.4);
   color: black;
 }
+
+.btn-bid {
+  width: 100%;
+  border: 2px solid $primary;
+}
+
+.btn-bid:hover,
+.btn-bid:active {
+  color: black;
+  border: 2px solid $primary;
+}
+
+.card-heart-btn {
+  all: unset;
+}

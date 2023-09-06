@@ -2,21 +2,18 @@
 $green-light: #2eed9d;
 $orange-light: #f48f3c;
 $gray-bg: #303136;
+$gray-bg-light: #e3e3e3;
 
 $primary: $green-light;
 $secondary: $orange-light;
 $dark: $gray-bg;
+$light: $gray-bg-light;
+
+// Typography
+$headings-font-family: "Raleway", sans-serif;
+$display-font-family: "Raleway", sans-serif;
 
 // $input-focus-border-color: tint-color($primary, 100%);
-
-// $primary:       $blue !default;
-// $secondary:     $gray-600 !default;
-// $success:       $green !default;
-// $info:          $cyan !default;
-// $warning:       $yellow !default;
-// $danger:        $red !default;
-// $light:         $gray-100 !default;
-// $dark:          $gray-900 !default;
 
 // Import Boostrap
 @import "../../node_modules/bootstrap/scss/bootstrap";
