@@ -161,10 +161,8 @@
             <h1 class="display-7 my-4">Create account</h1>
           </div>
           <div class="row justify-content-center">
-            <form
-              class="col-md-6 text-bg-info p-4 rounded-3"
-              action="../account"
-            >
+            <form class="col-md-6 text-bg-info p-4 rounded-3" id="registerForm">
+              <div id="message"></div>
               <label for="inputUsername" class="form-label">Username</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -174,10 +172,14 @@
                 </div>
                 <input
                   type="text"
+                  name="name"
                   class="form-control"
                   id="inputUsername"
                   aria-label="Username"
                   required
+                  autocomplete
+                  pattern="^[\w]+$"
+                  title="Username must only contain lowercase and uppercase letters, numbers and underscore. Example: My_User123"
                 />
               </div>
 
@@ -190,10 +192,13 @@
                 </div>
                 <input
                   type="email"
+                  name="email"
                   class="form-control"
                   id="inputEmail"
                   aria-describedby="emailHelp"
                   required
+                  pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                  title="Only @noroff.no or @stud.noroff.no domains are allowed to register"
                 />
               </div>
 
@@ -206,6 +211,7 @@
                 </div>
                 <input
                   type="password"
+                  name="password"
                   class="form-control"
                   aria-label="Password"
                   aria-describedby="basic-addon1"
@@ -228,7 +234,7 @@
                   type="password"
                   class="form-control mb-3"
                   aria-label="Password"
-                  id="inputPassword"
+                  id="confirmInputPassword"
                   minlength="8"
                   required=""
                 />
@@ -254,5 +260,6 @@
         </div>
       </section>
     </main>
+    <script src="../../src/js/index.mjs" type="module"></script>
   </body>
 </html>
