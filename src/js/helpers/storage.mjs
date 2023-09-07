@@ -8,6 +8,6 @@ export function getName() {
   return index.load("name");
 }
 
-export function getCredits() {
+export function getProfile() {
   return index.load("profile");
 }

@@ -1,7 +1,7 @@
-import { API_SOCIAL_URL } from '../constants.mjs';
+import { API_SOCIAL_URL } from "../constants.mjs";
 
-const action = '/auth/register';
-const method = 'POST';
+const action = "/auth/register";
+const method = "POST";
 
 export async function register(profile) {
   const registerUrl = API_SOCIAL_URL + action;
@@ -9,16 +9,15 @@ export async function register(profile) {
 
   const response = await fetch(registerUrl, {
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     method,
     body,
   });
   const result = await response.json();
-  console.log(result);
 
-  alert(`${result.name} created account`);
-  location.href = '/user/account/index.html';
-
-  return result;
+  if (result !== null) {
+    location.href = "/user/login/index.html";
+    return result;
+  }
 }
