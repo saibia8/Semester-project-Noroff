@@ -5,6 +5,7 @@ export default function buildPosts() {
   const menuDivLogin = document.getElementById("loginOrLogout");
   if (isLoggedIn()) {
     menuDivLogin.innerHTML = "";
+    menuDivLogin.className = "";
     const profile = getCredits();
 
     menuDivLogin.id = "logout";
@@ -15,7 +16,7 @@ export default function buildPosts() {
       class="d-flex justify-content-center align-items-center gap-3"
     >
       <p class="text-white mb-0 text-uppercase fw-semibold">
-        ${profile.credits}
+        Credits: ${profile.credits}
       </p>
       <a href="/" class="nav-link"
         ><span class="fs-3"
