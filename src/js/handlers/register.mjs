@@ -1,5 +1,5 @@
 import { register } from "../api/auth/register.mjs";
-import displayMessage from "../api/ui/common/displayMessage.mjs";
+import { displayMessage } from "../api/ui/common/index.mjs";
 
 /**
  *Sets the register form listener to handle form submission.
@@ -10,10 +10,10 @@ export function setRegisterFormListener() {
   const confirmPassword = document.getElementById("confirmInputPassword");
 
   if (form) {
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (password.value !== confirmPassword.value) {
-        displayMessage("danger", "Passwords don't match!", "#message");
+        displayMessage("warning", "Passwords don't match!", "#message");
         return;
       } else {
         const form = event.target;
@@ -21,7 +21,13 @@ export function setRegisterFormListener() {
         const profile = Object.fromEntries(formData.entries());
 
         //Send the profile data to the API for registration
-        register(profile);
+        try {
+          await register(profile);
+          displayMessage("success", "Registration successful! You can now log in.", "#message");
+          form.reset();
+        } catch (error) {
+          displayMessage("danger", error.message, "#message");
+        }
       }
     });
   }
