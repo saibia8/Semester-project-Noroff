@@ -13,7 +13,9 @@ export function redirectBasedOnLogin(pathname) {
   } else {
     if (
       pathname === '/user/account/' ||
-      pathname === '/user/account/index.html'
+      pathname === '/user/account/index.html' ||
+      pathname === "/user/profile/" ||
+      pathname === "/user/profile/index.html"
     ) {
       location.href = '/index.html';
     }

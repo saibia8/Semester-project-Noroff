@@ -1,4 +1,5 @@
-import { login } from "../api/auth/login.mjs";
+import makeApiCall from "../api/auth/makeApiCall.mjs";
+import createOptions from "../api/auth/createOptions.mjs";
 import * as index from "../storage/index.mjs";
 import { displayMessage } from "../api/ui/common/index.mjs";
 
@@ -23,16 +24,20 @@ async function handleLogin(event) {
 
   const bodyData = { email: emailData, password: passwordData };
 
-  try {
-    const json = await login(bodyData);
-    index.save("token", json.accessToken);
-    index.save("name", json.name);
-    index.save("profile", json);
-    location.href = "/user/profile/";
-  } catch (error) {
-    console.log(error);
-    displayMessage("danger", error.message, "#message");
-  } finally {
+  const endpoint = "auth/login";
+  const method = "POST";
+
+  const options = createOptions(method, bodyData);
+
+  const { data, error } = await makeApiCall(endpoint, options);
+
+  if (error) {
     button.innerText = "Login";
+    return displayMessage("danger", error, "#message");
   }
+
+  index.save("token", data.accessToken);
+  index.save("name", data.name);
+  index.save("profile", data);
+  location.href = "/user/profile/";
 }

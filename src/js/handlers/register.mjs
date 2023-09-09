@@ -1,5 +1,6 @@
-import { register } from "../api/auth/register.mjs";
+import makeApiCall from "../api/auth/makeApiCall.mjs";
 import { displayMessage } from "../api/ui/common/index.mjs";
+import createOptions from "../api/auth/createOptions.mjs";
 
 /**
  *Sets the register form listener to handle form submission.
@@ -21,13 +22,20 @@ export function setRegisterFormListener() {
         const profile = Object.fromEntries(formData.entries());
 
         //Send the profile data to the API for registration
-        try {
-          await register(profile);
-          displayMessage("success", "Registration successful! You can now log in.", "#message");
-          form.reset();
-        } catch (error) {
-          displayMessage("danger", error.message, "#message");
+        const endpoint = "auth/register";
+        const method = "POST";
+        
+        const options = createOptions(method, profile);
+        
+        const { error } = await makeApiCall(endpoint, options);
+
+        if (error) {
+          return displayMessage("danger", error, "#message");
         }
+
+        displayMessage("success", `Registration successfull! You can now <a href="../../../user/login">login</a>.`, "#message");
+
+        form.reset();
       }
     });
   }
