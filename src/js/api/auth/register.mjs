@@ -17,7 +17,7 @@ export async function register(profile) {
   const result = await response.json();
 
   if (result !== null) {
-    location.href = "/user/login/index.html";
+    location.href = "/user/login/";
     return result;
   }
 }
