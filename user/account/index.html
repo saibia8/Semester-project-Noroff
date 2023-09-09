@@ -23,6 +23,7 @@
       src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
     ></script>
+    <script src="../../src/js/index.mjs" type="module" defer></script>
   </head>
 
   <body class="bg-light-subtle">
@@ -146,7 +147,7 @@
                   >
                     Credits: 1000
                   </p>
-                  <a href="/user/account/index.html" class="nav-link"
+                  <a href="/user/profile/" class="nav-link"
                     ><span class="fs-3"
                       ><i class="bi bi-person-circle"></i></span
                   ></a>
@@ -165,39 +166,100 @@
 
     <main>
       <!-- Account settings form -->
-      <section>
+      <section class="mb-3">
         <div class="container">
           <div class="text-center">
             <h1 class="display-7 my-4">Account settings</h1>
           </div>
           <div class="row justify-content-center">
             <form
-              class="col-md-6 text-bg-info p-4 rounded-3"
+              class="col-md-8 col-xl-6 text-bg-info p-4 rounded-3"
               action="../account"
             >
-              <label for="inputEmail" class="form-label">Email</label>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1"
-                    ><i class="bi bi-envelope-fill"></i
-                  ></span>
+              <!-- Change user avatar -->
+              <h2 class="fs-4 border-bottom border-dark mb-3">User avatar</h2>
+              <div class="mb-5 text-dark">
+                <label for="inputAvatarUrl" class="form-label"
+                  >Avatar url adress</label
+                >
+                <div class="input-group mb-3">
+                  <input
+                    type="url"
+                    name="url"
+                    class="form-control"
+                    id="inputAvatarUrl"
+                    aria-label="Avatar"
+                    pattern="https://.*"
+                  />
                 </div>
+              </div>
+
+              <!-- Username section -->
+              <h2 class="fs-4 border-bottom border-dark mb-3">
+                Personal information
+              </h2>
+              <label for="inputUsername" class="form-label"
+                >Current username</label
+              >
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  id="inputUsername"
+                  aria-label="Username"
+                  autocomplete
+                  pattern="^[\w]+$"
+                  title="Username must only contain lowercase and uppercase letters, numbers and underscore. Example: My_User123"
+                />
+              </div>
+
+              <label for="inputUsername" class="form-label">New username</label>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  id="inputUsername"
+                  aria-label="Username"
+                  autocomplete
+                  pattern="^[\w]+$"
+                  title="Username must only contain lowercase and uppercase letters, numbers and underscore. Example: My_User123"
+                />
+              </div>
+
+              <!-- Email section -->
+              <h2 class="fs-4 border-bottom border-dark mt-5 mb-3">
+                Change email
+              </h2>
+              <label for="inputEmail" class="form-label">Current email</label>
+              <div class="input-group mb-3">
                 <input
                   type="email"
                   class="form-control"
                   id="inputEmail"
                   aria-describedby="emailHelp"
-                  required
                 />
               </div>
 
-              <label for="inputPassword" class="form-label">Password</label>
+              <label for="inputEmail" class="form-label">New email</label>
               <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1"
-                    ><i class="bi bi-lock-fill"></i
-                  ></span>
-                </div>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputEmail"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+
+              <!-- Password section -->
+              <h2 class="fs-4 border-bottom border-dark mt-5 mb-3">
+                Change password
+              </h2>
+              <label for="inputPassword" class="form-label"
+                >Current password</label
+              >
+              <div class="input-group mb-3">
                 <input
                   type="password"
                   class="form-control"
@@ -205,44 +267,63 @@
                   aria-describedby="basic-addon1"
                   id="inputPassword"
                   minlength="8"
-                  required
                 />
               </div>
-              <div class="mb-3 form-check d-flex justify-content-between">
-                <div>
-                  <input type="checkbox" class="form-check-input" id="check" />
-                  <label class="form-check-label" for="check"
-                    >Remember me</label
-                  >
-                </div>
-                <a href="#" class="text-decoration-none forgot-password"
-                  >Forgot password?</a
-                >
+
+              <label for="inputPassword" class="form-label">New password</label>
+              <div class="input-group mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  aria-label="Password"
+                  aria-describedby="basic-addon1"
+                  id="inputPassword"
+                  minlength="8"
+                />
               </div>
+
+              <label for="inputPassword" class="form-label"
+                >Confirm password</label
+              >
+              <div class="input-group mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  aria-label="Password"
+                  aria-describedby="basic-addon1"
+                  id="inputPassword"
+                  minlength="8"
+                />
+              </div>
+
+              <!-- Save button -->
               <div class="d-flex justify-content-center">
                 <button
                   type="submit"
-                  class="btn btn-secondary btn-orange btn-action w-50 rounded-pill mt-3"
+                  class="btn btn-primary rounded-pill btn-style btn-green btn-bid w-50 mt-4 mb-3"
                 >
-                  Login
+                  Save
                 </button>
               </div>
+
+              <!-- Delete account section -->
+              <h2 class="fs-4 border-bottom border-dark mt-5 mb-3">
+                Delete account
+              </h2>
+              <p>
+                <span class="fw-bold">Warning</span>: You will no longer be able
+                to access your account. All information will be deleted.
+              </p>
+              <button
+                type="submit"
+                class="btn btn-danger rounded-pill w-50 mt-1 mb-3"
+              >
+                Delete
+              </button>
             </form>
           </div>
         </div>
       </section>
-
-      <!-- Create account -->
-      <section class="container-sm text-center">
-        <p class="text-dark mt-5 border-top py-2 d-inline-block px-5">
-          Not a memeber?<a
-            href="../register"
-            class="text-secondary ms-2 create-account"
-            >Create account</a
-          >
-        </p>
-      </section>
     </main>
-    <script src="../../src/js/index.mjs" type="module"></script>
   </body>
 </html>

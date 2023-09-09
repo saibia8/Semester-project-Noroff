@@ -14,7 +14,7 @@ export default function buildInfoLogout() {
       <p class="text-white mb-0 text-uppercase fw-semibold">
         Credits: ${profile.credits}
       </p>
-      <a href="/user/account/index.html" class="nav-link"
+      <a href="/user/profile/" class="nav-link"
         ><span class="fs-3"><i class="bi bi-person-circle "></i></span></a>
     </div>
     <button class="log-out-btn" id="logout">
