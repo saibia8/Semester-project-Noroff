@@ -1,6 +1,5 @@
 import * as listeners from "./handlers/index.mjs";
-//import buildPosts from "./api/ui/common/buildPosts.mjs";
-import { buildInfo } from "./api/ui/common/buildInfo.mjs";
+import { buildInfoProfile } from "./api/ui/common/buildInfoProfile.mjs";
 import buildInfoIndex from "./api/ui/common/buildInfoIndex.mjs";
 import { redirectBasedOnLogin } from "./helpers/auth.mjs";
 
@@ -8,7 +7,6 @@ export default function router() {
   const pathname = window.location.pathname;
 
   redirectBasedOnLogin(pathname);
-  //buildPosts();
 
   switch (pathname) {
     case "/":
@@ -25,9 +23,10 @@ export default function router() {
       break;
     case "/user/account/":
     case "/user/account/index.html":
+      break;
     case "/user/profile/":
     case "/user/profile/index.html":
-      buildInfo();
+      buildInfoProfile();
       break;
   }
 }

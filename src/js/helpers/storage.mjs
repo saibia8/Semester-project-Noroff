@@ -11,3 +11,7 @@ export function getName() {
 export function getProfile() {
   return index.load("profile");
 }
+
+export function getToken() {
+  return index.load("token");
+}

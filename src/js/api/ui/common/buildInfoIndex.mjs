@@ -18,6 +18,7 @@ export default async function buildInfoIndex() {
 
   if (isLoggedIn()) {
     const menuDivLogin = document.getElementById("loginOrLogout");
+   
     const profile = getProfile();
     menuDivLogin.innerHTML = "";
     menuDivLogin.classList.remove("d-grid", "gap-3", "d-lg-block");

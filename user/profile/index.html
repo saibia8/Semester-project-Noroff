@@ -168,7 +168,7 @@
       <!-- Profile information section -->
       <section class="mb-3 container-lg">
         <h1 class="display-7 my-4 text-center">My account</h1>
-        <div class="container-lg text-bg-info p-4 rounded-3">
+        <div id="profile" class="container-lg text-bg-info p-4 rounded-3">
           <!-- User profile info section-->
           <div
             class="row justify-content-center align-items-start flex-column flex-md-row gap-1 gap-lg-5"
@@ -176,6 +176,7 @@
             <!-- Avatar image  -->
             <div class="col-8 col-md-4 col-lg-4 mt-3">
               <img
+                id="avatarImg"
                 src="../../assets/images/smiling-woman-orange-jumpsuit-with-tablet-in-her-hands.png"
                 alt=""
                 class="img-fluid"
@@ -187,9 +188,9 @@
               class="col-10 col-lg-4 mt-5 d-flex flex-column justify-content-lg-between"
             >
               <div>
-                <p class="display-6 fs-4 fw-semibold mb-5">Username</p>
+                <p id="userName" class="display-5 fw-semibold mb-5">Username</p>
                 <p class="display-6 fs-4 fw-semibold mb-0">Credit balance:</p>
-                <p class="display-5 fw-semibold mb-5">1000</p>
+                <p id="creditsUser" class="display-5 fw-semibold mb-5">1000</p>
                 <a
                   href="#"
                   class="text-black display-6 text-decoration-none fs-4 fw-semibold"

@@ -1,3 +1,3 @@
 export * from "./displayMessage.mjs";
-export * from "./buildInfo.mjs";
+export * from "./buildInfoProfile.mjs";
 export * from "./buildInfoIndex.mjs";
