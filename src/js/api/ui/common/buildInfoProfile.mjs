@@ -4,7 +4,7 @@ import createOptions from "../../auth/createOptions.mjs";
 import makeApiCall from "../../auth/makeApiCall.mjs";
 import { displayMessage } from "./displayMessage.mjs";
 
-export async function buildInfo() {
+export async function buildInfoProfile() {
   const pCredits = document.getElementById("credits");
   const container = document.getElementById("profile");
   const avatarImg = document.getElementById("avatarImg");

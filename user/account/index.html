@@ -171,10 +171,11 @@
           <div class="text-center">
             <h1 class="display-7 my-4">Account settings</h1>
           </div>
-          <div class="row justify-content-center">
+          <div id="account" class="row justify-content-center">
+            <div id="message"></div>
             <form
               class="col-md-8 col-xl-6 text-bg-info p-4 rounded-3"
-              action="../account"
+              id="editProfile"
             >
               <!-- Change user avatar -->
               <h2 class="fs-4 border-bottom border-dark mb-3">User avatar</h2>
@@ -185,7 +186,7 @@
                 <div class="input-group mb-3">
                   <input
                     type="url"
-                    name="url"
+                    name="avatar"
                     class="form-control"
                     id="inputAvatarUrl"
                     aria-label="Avatar"
@@ -204,13 +205,10 @@
               <div class="input-group mb-3">
                 <input
                   type="text"
-                  name="name"
                   class="form-control"
-                  id="inputUsername"
+                  id="oldUsername"
                   aria-label="Username"
-                  autocomplete
-                  pattern="^[\w]+$"
-                  title="Username must only contain lowercase and uppercase letters, numbers and underscore. Example: My_User123"
+                  readonly
                 />
               </div>
 
@@ -218,9 +216,8 @@
               <div class="input-group mb-3">
                 <input
                   type="text"
-                  name="name"
                   class="form-control"
-                  id="inputUsername"
+                  name="name"
                   aria-label="Username"
                   autocomplete
                   pattern="^[\w]+$"
@@ -236,9 +233,10 @@
               <div class="input-group mb-3">
                 <input
                   type="email"
+                  id="oldEmail"
                   class="form-control"
-                  id="inputEmail"
                   aria-describedby="emailHelp"
+                  readonly
                 />
               </div>
 
@@ -246,53 +244,11 @@
               <div class="input-group mb-3">
                 <input
                   type="email"
+                  name="email"
                   class="form-control"
-                  id="inputEmail"
                   aria-describedby="emailHelp"
-                />
-              </div>
-
-              <!-- Password section -->
-              <h2 class="fs-4 border-bottom border-dark mt-5 mb-3">
-                Change password
-              </h2>
-              <label for="inputPassword" class="form-label"
-                >Current password</label
-              >
-              <div class="input-group mb-3">
-                <input
-                  type="password"
-                  class="form-control"
-                  aria-label="Password"
-                  aria-describedby="basic-addon1"
-                  id="inputPassword"
-                  minlength="8"
-                />
-              </div>
-
-              <label for="inputPassword" class="form-label">New password</label>
-              <div class="input-group mb-3">
-                <input
-                  type="password"
-                  class="form-control"
-                  aria-label="Password"
-                  aria-describedby="basic-addon1"
-                  id="inputPassword"
-                  minlength="8"
-                />
-              </div>
-
-              <label for="inputPassword" class="form-label"
-                >Confirm password</label
-              >
-              <div class="input-group mb-3">
-                <input
-                  type="password"
-                  class="form-control"
-                  aria-label="Password"
-                  aria-describedby="basic-addon1"
-                  id="inputPassword"
-                  minlength="8"
+                  pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                  title="Only @noroff.no or @stud.noroff.no domains are allowed to register"
                 />
               </div>
 
@@ -315,7 +271,7 @@
                 to access your account. All information will be deleted.
               </p>
               <button
-                type="submit"
+                type="button"
                 class="btn btn-danger rounded-pill w-50 mt-1 mb-3"
               >
                 Delete
