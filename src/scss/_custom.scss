@@ -13,7 +13,11 @@ $info: $gray-bg-light;
 $headings-font-family: "Raleway", sans-serif;
 $display-font-family: "Raleway", sans-serif;
 
-// $input-focus-border-color: tint-color($primary, 100%);
+// On focus hides placeholder text
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}
 
 // Import Boostrap
 @import "../../node_modules/bootstrap/scss/bootstrap";
