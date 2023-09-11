@@ -15,7 +15,13 @@
     "start": "live-server",
     "dev": "npm-run-all --parallel watch start"
   },
-  "keywords": ["auction", "bidding", "Bidzone", "deals", "online bidding"],
+  "keywords": [
+    "auction",
+    "bidding",
+    "Bidzone",
+    "deals",
+    "online bidding"
+  ],
   "author": "Sabina Kutniauske <saibia@gmail.com>",
   "license": "ISC",
   "devDependencies": {
@@ -39,6 +45,7 @@
     ]
   },
   "dependencies": {
-    "bootstrap": "^5.3.1"
+    "bootstrap": "^5.3.1",
+    "watch": "^1.0.2"
   }
 }
