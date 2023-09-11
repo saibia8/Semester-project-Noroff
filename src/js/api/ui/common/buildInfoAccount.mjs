@@ -57,7 +57,6 @@ export default async function buildInfoAccount() {
 
         displayMessage("success", `Update successfull!`, "#message");
 
-        form.reset();
       });
     }
   }

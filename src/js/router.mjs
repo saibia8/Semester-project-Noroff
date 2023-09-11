@@ -3,6 +3,7 @@ import { buildInfoProfile } from "./api/ui/common/buildInfoProfile.mjs";
 import buildInfoIndex from "./api/ui/common/buildInfoIndex.mjs";
 import { redirectBasedOnLogin } from "./helpers/auth.mjs";
 import buildInfoAccount from "./api/ui/common/buildInfoAccount.mjs";
+import buildInfoListing from "./api/ui/common/buildInfoListing.mjs";
 
 export default function router() {
   const pathname = window.location.pathname;
@@ -29,6 +30,10 @@ export default function router() {
     case "/user/profile/":
     case "/user/profile/index.html":
       buildInfoProfile();
+      break;
+    case "/user/listing/":
+    case "/user/listing/index.html":
+      buildInfoListing();
       break;
   }
 }
