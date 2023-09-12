@@ -39,7 +39,13 @@ function createAuction({ title, media, endsAt, _count, bids }) {
   span.appendChild(i);
 
   const img = document.createElement("img");
-  img.src = `${media[0]}`;
+  console.log();
+  if (media.length === 0) {
+    img.src = "/assets/images/no-image.jpg"
+  }else{
+    img.src = `${media[0]}`;
+  }
+  
   img.classList.add("card-img-top", "border-bottom");
   img.alt = `${title}`;
   divCard.appendChild(img);
@@ -140,8 +146,13 @@ function createAuction({ title, media, endsAt, _count, bids }) {
 
   const aBid = document.createElement("a");
   if (isLoggedIn()) {
-    aBid.href = "#";
-    aBid.innerText = "Place a bid";
+    if (location.pathname === "/" || location.pathname === "/index.html") {
+      aBid.href = "#";
+      aBid.innerText = "Place a bid";
+    }else{
+      aBid.href = "#";
+      aBid.innerText = "Edit listing";
+    }
   } else {
     aBid.href = "/user/register/";
     aBid.innerText = "Register to bid";

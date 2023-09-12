@@ -73,7 +73,5 @@ export default async function buildInfoIndex() {
     spanBtn.appendChild(iBtn);
 
     listeners.setLogoutListener();
-
-  } else {
   }
 }

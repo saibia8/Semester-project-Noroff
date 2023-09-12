@@ -66,7 +66,10 @@ export default async function buildInfoListing() {
          displayMessage("success", `Created successfully!`, "#message");
 
          console.log(data);
- 
+
+         form.reset();
+
+         window.location.href = "#";
        });
      }
    }
