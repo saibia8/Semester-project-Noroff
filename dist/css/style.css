@@ -11925,10 +11925,20 @@ textarea.form-control-lg {
   text-decoration: underline 3px solid #2eed9d;
 }
 
+.back-btn {
+  color: #303136;
+}
+
+.back-btn:hover,
+.back-btn:active {
+  background-color: #303136;
+  color: white;
+}
+
 .heart-icon {
   position: absolute;
   right: 8px;
-  top: 15px;
+  top: 10px;
   color: #000;
   background: #fff;
   border-radius: 100%;
@@ -11936,7 +11946,7 @@ textarea.form-control-lg {
   height: 30px;
   width: 30px;
   align-items: center;
-  padding: 8px 0 0 9.5px;
+  padding: 4.5px 0 0 7px;
 }
 
 .heart-icon:hover,
