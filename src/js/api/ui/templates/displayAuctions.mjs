@@ -23,7 +23,7 @@ function createAuction({ title, media, endsAt, _count, bids }) {
   div.classList.add("col-10", "col-md-6", "col-lg-4", "col-xl-3", "mb-4");
 
   const divCard = document.createElement("div");
-  divCard.className = "card";
+  divCard.classList.add("card");
   div.appendChild(divCard);
 
   const btn = document.createElement("button");
@@ -146,7 +146,7 @@ function createAuction({ title, media, endsAt, _count, bids }) {
 
   const aBid = document.createElement("a");
   if (isLoggedIn()) {
-    if (location.pathname === "/" || location.pathname === "/index.html") {
+    if (location.pathname === "/" || location.pathname === "/index.html" || location.pathname === "/listings/" || location.pathname === "/listings/index.html") {
       aBid.href = "#";
       aBid.innerText = "Place a bid";
     }else{

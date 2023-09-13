@@ -4,6 +4,8 @@ import buildInfoIndex from "./api/ui/common/buildInfoIndex.mjs";
 import { redirectBasedOnLogin } from "./helpers/auth.mjs";
 import buildInfoAccount from "./api/ui/common/buildInfoAccount.mjs";
 import buildInfoListing from "./api/ui/common/buildInfoListing.mjs";
+import buildInfoAuction from "./api/ui/common/buildInfoAuction.mjs";
+import { setSearchForm } from "./handlers/search.mjs";
 
 export default function router() {
   const pathname = window.location.pathname;
@@ -14,6 +16,12 @@ export default function router() {
     case "/":
     case "/index.html":
       buildInfoIndex();
+      setSearchForm();
+      break;
+    case "/listings/":
+    case "/listings/index.html":
+      buildInfoAuction();
+      setSearchForm();
       break;
     case "/user/register/":
     case "/user/register/index.html":
