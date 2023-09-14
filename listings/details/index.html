@@ -142,12 +142,12 @@
               <!-- Login and Sign up -->
               <div id="loginOrLogout" class="d-grid gap-3 d-lg-block">
                 <a
-                  href="../user/login/"
+                  href="../../user/login/"
                   class="btn btn-primary rounded-pill me-lg-2 text-uppercase btn-lg-block btn-style btn-green"
                   >Login</a
                 >
                 <a
-                  href="../user/register/"
+                  href="../../user/register/"
                   class="btn btn-secondary rounded-pill text-uppercase btn-lg-block btn-style btn-orange"
                   >Sign up</a
                 >
@@ -163,51 +163,93 @@
         <div class="row">
           <a
             href="../"
-            class="d-flex align-items-center mt-4 text-decoration-none border border-dark rounded-pill col-auto back-btn"
+            class="d-flex align-items-center mt-4 text-decoration-none border border-dark rounded-pill col-auto back-btn mb-4"
             ><span><i class="bi bi-arrow-left fs-4 me-2"></i></span>Back to
             listings</a
           >
-          <h1 class="display-7 my-4 text-center">Stylish headphones</h1>
         </div>
       </div>
 
       <!-- Item details -->
       <section class="mb-3 container-lg bg-info rounded-3">
-        <div
-          class="row justify-content-center align-items-start flex-column flex-md-row gap-1 gap-lg-5"
-        >
-          <!-- Left side with photos of item details section -->
-          <div class="d-flex flex-column">
-            <div class="col-8 col-md-4 my-3">
+        <div class="row">
+          <h1 class="display-7 my-4 text-center">Stylish headphones</h1>
+          <div
+            class="d-flex flex-column flex-md-row gap-0 gap-lg-4 justify-content-center"
+          >
+            <!-- Left side with photos of item details section -->
+            <div class="d-flex flex-column">
               <img
                 src="../../assets/images/levitating-music-headphones-display.jpg"
                 alt=""
-                class="img-fluid"
+                class="img-fluid mt-4 mb-3 mx-3"
               />
+              <div class="d-flex col-3 col-md-2 gap-3 mx-3">
+                <img
+                  src="../../assets/images/levitating-music-headphones-display.jpg"
+                  alt=""
+                  class="img-fluid"
+                />
+                <img
+                  src="../../assets/images/levitating-music-headphones-display.jpg"
+                  alt=""
+                  class="img-fluid"
+                />
+                <img
+                  src="../../assets/images/levitating-music-headphones-display.jpg"
+                  alt=""
+                  class="img-fluid"
+                />
+              </div>
+
+              <!-- Item description -->
+              <div class="col col-md-10 mt-4 mb-0 mb-lg-4 mx-3">
+                <h3>Description</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
+                  aliquid laboriosam, earum saepe facere debitis quas
+                  perspiciatis, eveniet dolorum consequatur animi voluptatibus
+                  laudantium. A quis nam quos soluta hic amet, deserunt aut, sed
+                  explicabo beatae deleniti saepe dolor sit consequatur odit,
+                  exercitationem alias corporis ipsa? Ab aspernatur fugiat
+                  praesentium autem?
+                </p>
+              </div>
             </div>
-            <div class="d-flex col-3 col-md-2 gap-2">
-              <img
-                src="../../assets/images/levitating-music-headphones-display.jpg"
-                alt=""
-                class="img-fluid"
-              />
-              <img
-                src="../../assets/images/levitating-music-headphones-display.jpg"
-                alt=""
-                class="img-fluid"
-              />
-              <img
-                src="../../assets/images/levitating-music-headphones-display.jpg"
-                alt=""
-                class="img-fluid"
-              />
+
+            <!-- Right side with item details and bidding -->
+            <div class="mt-4 d-flex flex-column col col-md-6 mx-3">
+              <p class="fs-4 mb-3">Seller: Username</p>
+              <p class="fs-3 fw-semibold mb-5">Current bid: 120 credits</p>
+
+              <!-- Bid input -->
+              <div class="input-group mb-5">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your bid"
+                  aria-label="Place a bid"
+                  aria-describedby="button-addon2"
+                />
+                <button
+                  class="btn btn-secondary btn-action btn-lg"
+                  type="button"
+                  id="button-addon2"
+                >
+                  Place a bid
+                </button>
+              </div>
+
+              <!-- Bid history -->
+              <p class="mb-2 fs-4">Bid history:</p>
+              <ol class="mb-5">
+                <li class="ps-2 fw-bolder mb-1">Bazuka: 120 credits</li>
+                <li class="ps-2 mb-1">SweetCorn: 93 credits</li>
+                <li class="ps-2 mb-1">Bulma: 88 credits</li>
+                <li class="ps-2 mb-1">Mikado: 62 credits</li>
+              </ol>
             </div>
           </div>
-
-          <!-- Right side with item details and bidding -->
-          <div
-            class="col-10 col-lg-4 mt-5 d-flex flex-column justify-content-lg-between"
-          ></div>
         </div>
       </section>
     </main>
