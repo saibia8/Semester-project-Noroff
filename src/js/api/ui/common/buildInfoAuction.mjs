@@ -59,6 +59,7 @@ export default async function buildInfoAuction() {
      menuDivLogin.appendChild(btn);
  
      const spanBtn = document.createElement("span");
+     spanBtn.className = "ms-2";
      btn.appendChild(spanBtn);
  
      const iBtn = document.createElement("i");

@@ -16,12 +16,12 @@ export default function router() {
     case "/":
     case "/index.html":
       buildInfoIndex();
-      setSearchForm();
+      setSearchForm(pathname);
       break;
     case "/listings/":
     case "/listings/index.html":
       buildInfoAuction();
-      setSearchForm();
+      setSearchForm(pathname);
       break;
     case "/user/register/":
     case "/user/register/index.html":
@@ -38,6 +38,7 @@ export default function router() {
     case "/user/profile/":
     case "/user/profile/index.html":
       buildInfoProfile();
+      setSearchForm(pathname);
       break;
     case "/user/listing/":
     case "/user/listing/index.html":

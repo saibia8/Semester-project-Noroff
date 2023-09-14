@@ -6,7 +6,7 @@ import { displayAuctions } from "../templates/displayAuctions.mjs";
 
 export default async function buildInfoIndex() {
   const container = document.getElementById("auctions");
-  const endpoint = "listings?_bids=true";
+  const endpoint = "listings?_bids=true&limit=10";
 
   const { data, error } = await makeApiCall(endpoint);
 
@@ -66,6 +66,7 @@ export default async function buildInfoIndex() {
     menuDivLogin.appendChild(btn);
 
     const spanBtn = document.createElement("span");
+    spanBtn.className = "ms-2";
     btn.appendChild(spanBtn);
 
     const iBtn = document.createElement("i");

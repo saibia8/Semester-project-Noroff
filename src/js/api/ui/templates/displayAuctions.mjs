@@ -9,7 +9,7 @@ export function displayAuctions(auctions, container) {
   container.append(...html);
 }
 
-function createAuction({ title, media, endsAt, _count, bids }) {
+function createAuction({id, title, media, endsAt, _count, bids }) {
   const endDate = new Date(endsAt);
   let totalAmount = 0;
 
@@ -22,9 +22,12 @@ function createAuction({ title, media, endsAt, _count, bids }) {
   const div = document.createElement("div");
   div.classList.add("col-10", "col-md-6", "col-lg-4", "col-xl-3", "mb-4");
 
+  const linkToDetail = document.createElement("a");
+  linkToDetail.href = `/listings/details/index.html?id=${id}`;
   const divCard = document.createElement("div");
   divCard.classList.add("card");
-  div.appendChild(divCard);
+  linkToDetail.appendChild(divCard);
+  div.appendChild(linkToDetail);
 
   const btn = document.createElement("button");
   btn.className = "card-heart-btn";
