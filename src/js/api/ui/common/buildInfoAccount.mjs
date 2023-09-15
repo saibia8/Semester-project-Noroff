@@ -22,8 +22,6 @@ export default async function buildInfoAccount() {
       return displayMessage("danger", error, container);
     }
 
-    console.log(data);
-
     pCredits.innerHTML = `Credits: ${data.credits}`;
 
     listeners.setLogoutListener();

@@ -23,9 +23,7 @@ export async function buildInfoProfile() {
 
     if (error) {
       return displayMessage("danger", error, container);
-    }
-
-    console.log(data);    
+    }  
 
     pCredits.innerHTML = `Credits: ${data.credits}`;
 
@@ -49,7 +47,6 @@ export async function buildInfoProfile() {
       return displayMessage("danger", listings.error, container);
     }
 
-    console.log(listings.data);
     displayAuctions(listings.data, auctions);
   }
 }
