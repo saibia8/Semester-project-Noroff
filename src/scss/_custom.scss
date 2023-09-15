@@ -19,5 +19,12 @@ textarea:focus::placeholder {
   color: transparent;
 }
 
+// Cards top-image size
+.card-img-height {
+  max-height: 10rem;
+  max-width: auto;
+  object-fit: contain;
+}
+
 // Import Boostrap
 @import "../../node_modules/bootstrap/scss/bootstrap";

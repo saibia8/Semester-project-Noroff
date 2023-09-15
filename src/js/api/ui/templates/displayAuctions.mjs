@@ -20,12 +20,13 @@ function createAuction({id, title, media, endsAt, _count, bids }) {
   });
 
   const div = document.createElement("div");
-  div.classList.add("col-10", "col-md-6", "col-lg-4", "col-xl-3", "mb-4");
+  div.classList.add("col-10", "col-md-6", "col-lg-4", "col-xl-3");
 
   const linkToDetail = document.createElement("a");
+  linkToDetail.classList.add("text-decoration-none");
   linkToDetail.href = `/listings/details/index.html?id=${id}`;
   const divCard = document.createElement("div");
-  divCard.classList.add("card");
+  divCard.classList.add("card", "h-100");
   linkToDetail.appendChild(divCard);
   div.appendChild(linkToDetail);
 
@@ -49,7 +50,7 @@ function createAuction({id, title, media, endsAt, _count, bids }) {
     img.src = `${media[0]}`;
   }
   
-  img.classList.add("card-img-top", "border-bottom");
+  img.classList.add("card-img-top", "border-bottom", "card-img-height");
   img.alt = `${title}`;
   divCard.appendChild(img);
 

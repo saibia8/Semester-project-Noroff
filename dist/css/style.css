@@ -4,6 +4,12 @@ textarea:focus::placeholder {
   color: transparent;
 }
 
+.card-img-height {
+  max-height: 10rem;
+  max-width: auto;
+  object-fit: contain;
+}
+
 /*!
  * Bootstrap  v5.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
