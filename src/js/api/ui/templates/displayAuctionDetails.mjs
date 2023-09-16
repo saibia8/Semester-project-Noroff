@@ -3,10 +3,9 @@ import bid from "../../../handlers/bid.mjs";
 import { displayMessage } from "../common/displayMessage.mjs";
 
 export default function displayAuctionDetails(data, container, bided = false) {
+  const divLoading = document.getElementById("loading");
+  divLoading.classList.add("d-none");
   container.innerHTML = "";
-
-  console.log(data);
-  console.log(container);
 
   let currentBid = 0;
 
@@ -141,8 +140,6 @@ export default function displayAuctionDetails(data, container, bided = false) {
 
   if (data.bids.length !== 0) {
     data.bids.forEach((element, index) => {
-      console.log(element);
-      console.log(index);
       const liNoBid = document.createElement("li");
       liNoBid.classList.add("ps-2", "mb-1");
       liNoBid.innerText = `${element.bidderName}: ${element.amount} credits`;
