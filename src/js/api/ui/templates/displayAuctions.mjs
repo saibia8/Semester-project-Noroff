@@ -151,7 +151,7 @@ function createAuction({id, title, media, endsAt, _count, bids }) {
   const aBid = document.createElement("a");
   if (isLoggedIn()) {
     if (location.pathname === "/" || location.pathname === "/index.html" || location.pathname === "/listings/" || location.pathname === "/listings/index.html") {
-      aBid.href = "#";
+      aBid.href = `/listings/details/index.html?id=${id}`;
       aBid.innerText = "Place a bid";
     }else{
       aBid.href = "#";
