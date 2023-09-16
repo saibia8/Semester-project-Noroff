@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="List your items for auction on Bidzone, showcasing to a global audience and getting the best value for your collectibles."
+    />
+    <meta
+      name="keywords"
+      content="Bidzone, create listing, auction item, selling item, online auction, auction listing, item details"
+    />
+    <meta name="author" content="Sabina Kutniauske" />
+    <title>Bidzone | Update or delete listing</title>
+    <link rel="icon" href="../../assets/images/Favicon.png" />
+    <link rel="stylesheet" href="../../dist/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <script
+      src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="../../src/js/index.mjs" type="module" defer></script>
+  </head>
+
+  <body class="bg-light-subtle">
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-xl">
+          <!-- Logo -->
+          <a href="/" class="navbar-brand"
+            ><img
+              src="../../assets/images/Bidzone-logo.png"
+              alt="Bidzone logo"
+              width="180"
+          /></a>
+
+          <!-- Toggle button for mobile navigation -->
+          <button
+            class="navbar-toggler border-0 shadow-none text-primary"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="currentColor"
+              class="bi bi-list text-white"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+            <!-- <span class="navbar-toggler-icon"></span> -->
+          </button>
+
+          <!-- Sidebar -->
+          <div
+            class="offcanvas offcanvas-end bg-dark"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <!-- Sidebar header -->
+            <div class="offcanvas-header border-bottom bg-dark text-white">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button
+                type="button"
+                class="btn"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-x-lg text-white"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Sidebar body -->
+            <div
+              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0"
+            >
+              <ul
+                class="navbar-nav justify-content-xl-center align-items-center flex-grow-1 pe-3 gap-2"
+              >
+                <li class="nav-item">
+                  <a class="nav-link text-uppercase" href="/">Home</a>
+                </li>
+                <li class="nav-item me-lg-5">
+                  <a class="nav-link text-uppercase" href="/listings/"
+                    >Auction</a
+                  >
+                </li>
+                <form class="d-flex flex-row mt-5 mt-lg-0" role="search">
+                  <input
+                    class="form-control me-2 rounded-pill px-4"
+                    type="search"
+                    placeholder="Search items"
+                    aria-label="Search items"
+                  />
+                  <button
+                    class="btn text-white"
+                    type="button"
+                    aria-label="Search"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      class="bi bi-search"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                      />
+                    </svg>
+                  </button>
+                </form>
+              </ul>
+
+              <!-- Login and Sign up -->
+              <div
+                class="d-flex justify-content-center align-items-center gap-4"
+              >
+                <div
+                  class="d-flex justify-content-center align-items-center gap-3"
+                >
+                  <p
+                    class="text-white mb-0 text-uppercase fw-semibold"
+                    id="credits"
+                  >
+                    Credits: 1000
+                  </p>
+                  <a href="/user/profile/" class="nav-link"
+                    ><span class="fs-3"
+                      ><i class="bi bi-person-circle"></i></span
+                  ></a>
+                </div>
+                <button class="log-out-btn" id="logout">
+                  Log out<span class="ms-2"
+                    ><i class="bi bi-box-arrow-right"></i
+                  ></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- New listing creation form -->
+      <section class="mb-5">
+        <div class="container-lg">
+          <div class="text-center">
+            <h1 class="display-7 my-4">Edit listing</h1>
+          </div>
+          <div class="row justify-content-center">
+            <form class="col-md-6 text-bg-info p-4 rounded-3" id="updateForm">
+              <div id="message"></div>
+
+              <!-- Photo URL addresses -->
+              <fieldset>
+                <legend>Photo URL addresses</legend>
+                <!-- 1 Photo url input -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text fs-5" id="basic-addon1"
+                      ><i class="bi bi-1-circle"></i
+                    ></span>
+                  </div>
+                  <label class="visually-hidden" for="itemPhoto1"
+                    >Photo URL 1</label
+                  >
+                  <input
+                    type="url"
+                    name="itemPhoto1"
+                    class="form-control"
+                    id="itemPhoto1"
+                    aria-label="item photo 1"
+                    pattern="https://.*"
+                    placeholder="https://example.com"
+                  />
+                </div>
+                <!-- 2 Photo url input -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text fs-5" id="basic-addon2"
+                      ><i class="bi bi-2-circle"></i
+                    ></span>
+                  </div>
+                  <label class="visually-hidden" for="itemPhoto2"
+                    >Photo URL 2</label
+                  >
+                  <input
+                    type="url"
+                    name="itemPhoto2"
+                    class="form-control"
+                    id="itemPhoto2"
+                    aria-label="item photo 2"
+                    pattern="https://.*"
+                  />
+                </div>
+                <!-- 3 Photo url input -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text fs-5" id="basic-addon3"
+                      ><i class="bi bi-3-circle"></i
+                    ></span>
+                  </div>
+                  <label class="visually-hidden" for="itemPhoto3"
+                    >Photo URL 3</label
+                  >
+                  <input
+                    type="url"
+                    name="itemPhoto3"
+                    class="form-control"
+                    id="itemPhoto3"
+                    aria-label="item photo 3"
+                    pattern="https://.*"
+                  />
+                </div>
+                <!-- 4 Photo url input -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text fs-5" id="basic-addon4"
+                      ><i class="bi bi-4-circle"></i
+                    ></span>
+                  </div>
+                  <label class="visually-hidden" for="itemPhoto4"
+                    >Photo URL 4</label
+                  >
+                  <input
+                    type="url"
+                    name="itemPhoto4"
+                    class="form-control"
+                    id="itemPhoto4"
+                    aria-label="item photo 4"
+                    pattern="https://.*"
+                  />
+                </div>
+                <!-- 5 Photo url input -->
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text fs-5" id="basic-addon5"
+                      ><i class="bi bi-5-circle"></i
+                    ></span>
+                  </div>
+                  <label class="visually-hidden" for="itemPhoto5"
+                    >Photo URL 5</label
+                  >
+                  <input
+                    type="url"
+                    name="itemPhoto5"
+                    class="form-control"
+                    id="itemPhoto5"
+                    aria-label="item photo 5"
+                    pattern="https://.*"
+                  />
+                </div>
+              </fieldset>
+
+              <!-- Item title -->
+              <div class="mb-3">
+                <label for="itemTitle" class="form-label">Title</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="itemTitle"
+                  name="title"
+                  placeholder="Enter a title"
+                  required
+                />
+              </div>
+
+              <!-- Item deadline -->
+              <div class="mb-3">
+                <label class="form-label d-block" for="deadline"
+                  >Deadline date and time</label
+                >
+                <input
+                  class="form-control w-100"
+                  type="datetime-local"
+                  id="deadline"
+                  name="deadline"
+                  required
+                />
+              </div>
+
+              <!-- Tags input -->
+              <div class="mb-3">
+                <label class="form-label d-block" for="tags">Tags</label>
+                <input
+                  class="form-label w-100"
+                  type="text"
+                  id="tags"
+                  name="tags"
+                  placeholder="Enter tags (comma-separated)"
+                  required
+                />
+              </div>
+
+              <!-- Item description -->
+              <div class="mb-3">
+                <label for="descriptionArea" class="form-label"
+                  >Description of the item (max 500 characters)</label
+                >
+                <textarea
+                  class="form-control"
+                  name="descriptionArea"
+                  id="descriptionArea"
+                  rows="6"
+                  maxlength="500"
+                  placeholder="Provide detailed information about the item, including its condition, specifications, and any relevant details"
+                  required
+                ></textarea>
+              </div>
+
+              <!-- Button create listing -->
+              <div class="d-flex justify-content-center">
+                <button
+                  type="submit"
+                  class="btn btn-secondary btn-orange btn-action w-50 rounded-pill mt-3"
+                >
+                  Edit listing
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -154,7 +154,7 @@ function createAuction({id, title, media, endsAt, _count, bids }) {
       aBid.href = `/listings/details/index.html?id=${id}`;
       aBid.innerText = "Place a bid";
     }else{
-      aBid.href = "#";
+      aBid.href = `/user/update/index.html?id=${id}`;
       aBid.innerText = "Edit listing";
     }
   } else {

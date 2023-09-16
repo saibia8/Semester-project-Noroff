@@ -7,6 +7,7 @@ import buildInfoListing from "./api/ui/common/buildInfoListing.mjs";
 import buildInfoAuction from "./api/ui/common/buildInfoAuction.mjs";
 import { setSearchForm } from "./handlers/search.mjs";
 import buildDetailAuction from "./api/ui/common/buildDetailAuction.mjs";
+import buildInfoUpdate from "./api/ui/common/buildInfoUpdate.mjs";
 
 export default function router() {
   const pathname = window.location.pathname;
@@ -48,6 +49,10 @@ export default function router() {
     case "/user/listing/":
     case "/user/listing/index.html":
       buildInfoListing();
+      break;
+    case "/user/update/":
+    case "/user/update/index.html":
+      buildInfoUpdate();
       break;
   }
 }
