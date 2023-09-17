@@ -3,11 +3,17 @@ import * as listeners from "../../../handlers/index.mjs";
 import createOptions from "../../auth/createOptions.mjs";
 import makeApiCall from "../../auth/makeApiCall.mjs";
 import { displayMessage } from "./displayMessage.mjs";
+import deleteListing from "../../../handlers/delete.mjs";
 
 export default async function buildInfoUpdate() {
   const pCredits = document.getElementById("credits");
   const form = document.querySelector("#updateForm");
   const formTitle = document.getElementById("itemTitle");
+  const formTime = document.getElementById("deadline");
+  const formTags = document.getElementById("tags");
+  const formDescription = document.getElementById("descriptionArea");
+  const deleteBtn = document.getElementById("deleteListing");
+
   if (isLoggedIn()) {
     const userProfile = getProfile();
     const url = new URL(location.href);
@@ -27,7 +33,24 @@ export default async function buildInfoUpdate() {
 
     listeners.setLogoutListener();
 
+    data.media.forEach((element, index) => {
+      let photoUrl = document.getElementById(`itemPhoto${index + 1}`);
+      photoUrl.value = `${element}`;
+    });
+
     formTitle.value = data.title;
+
+    formTime.value = data.endsAt.slice(0, 16);
+
+    data.tags.forEach((element, index) => {
+      if (data.tags.length === index + 1) {
+        formTags.value += `${element.trim()}`;
+      } else {
+        formTags.value += `${element.trim()}, `;
+      }
+    });
+
+    formDescription.value = data.description;
 
     if (form) {
       form.addEventListener("submit", async (event) => {
@@ -62,7 +85,7 @@ export default async function buildInfoUpdate() {
         }
 
         sendData.media = mediaData;
-        tagsData = profile.tags.split(",");
+        tagsData = profile.tags.split(", ");
         sendData.tags = tagsData;
 
         console.log(sendData);
@@ -70,22 +93,25 @@ export default async function buildInfoUpdate() {
         const endpointUpdate = `listings/${id}`;
         const method = "PUT";
 
-        //   const options = createOptions(method, sendData, {}, true);
+        const options = createOptions(method, sendData, {}, true);
 
-        //   const update = await makeApiCall(endpointUpdate, options);
+        const update = await makeApiCall(endpointUpdate, options);
 
-        //   if (update.error) {
-        //     return displayMessage("danger", update.error, "#message");
-        //   }
+        if (update.error) {
+          return displayMessage("danger", update.error, "#message");
+        }
 
-        //   displayMessage("success", `Updated successfully!`, "#message");
+        displayMessage("success", `Updated successfully!`, "#message");
 
-        //   console.log(update.data);
-
-        //   form.reset();
-
-        //   window.location.href = "#";
+        window.location.href = "#";
       });
     }
+
+    deleteBtn.addEventListener("click", async () => {
+      if(confirm("Are you sure?")){
+        await deleteListing(id);
+        window.location.href = "/user/profile/index.html";
+      }
+    });
   }
 }
