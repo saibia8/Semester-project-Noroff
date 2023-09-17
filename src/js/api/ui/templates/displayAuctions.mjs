@@ -8,9 +8,33 @@ export function displayAuctions(auctions, container) {
   container.append(...html);
 }
 
-function createAuction({id, title, media, endsAt, _count, bids }) {
+function createAuction({ id, title, media, endsAt, _count, bids }) {
   const endDate = new Date(endsAt);
   let totalAmount = 0;
+
+  const timer = setInterval(() => {
+    const nowTime = new Date().getTime();
+    const distance = endDate.getTime() - nowTime;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    pDaysNum.textContent = days;
+
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    pHoursNum.textContent = hours;
+
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    pMinutesNum.textContent = minutes;
+
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    pSecondsNum.textContent = seconds;
+
+    if (distance < 0) {
+      clearInterval(timer);
+      divTime2.innerHTML = "AUCTION FINISHED";
+    }
+  }, 1000);
 
   bids.forEach((element) => {
     if (element.amount > totalAmount) {
@@ -43,11 +67,11 @@ function createAuction({id, title, media, endsAt, _count, bids }) {
 
   const img = document.createElement("img");
   if (media.length === 0) {
-    img.src = "/assets/images/no-image.jpg"
-  }else{
+    img.src = "/assets/images/no-image.jpg";
+  } else {
     img.src = `${media[0]}`;
   }
-  
+
   img.classList.add("card-img-top", "border-bottom", "card-img-height");
   img.alt = `${title}`;
   divCard.appendChild(img);
@@ -115,7 +139,7 @@ function createAuction({id, title, media, endsAt, _count, bids }) {
   divMinutes.appendChild(pMinutes);
 
   const divSeconds = document.createElement("div");
-  divSeconds.classList.add("d-flex", "flex-column", "border-end", "px-2");
+  divSeconds.classList.add("d-flex", "flex-column", "px-2");
   divTime2.appendChild(divSeconds);
 
   const pSecondsNum = document.createElement("p");
@@ -148,10 +172,15 @@ function createAuction({id, title, media, endsAt, _count, bids }) {
 
   const aBid = document.createElement("a");
   if (isLoggedIn()) {
-    if (location.pathname === "/" || location.pathname === "/index.html" || location.pathname === "/listings/" || location.pathname === "/listings/index.html") {
+    if (
+      location.pathname === "/" ||
+      location.pathname === "/index.html" ||
+      location.pathname === "/listings/" ||
+      location.pathname === "/listings/index.html"
+    ) {
       aBid.href = `/listings/details/index.html?id=${id}`;
       aBid.innerText = "Place a bid";
-    }else{
+    } else {
       aBid.href = `/user/update/index.html?id=${id}`;
       aBid.innerText = "Edit listing";
     }

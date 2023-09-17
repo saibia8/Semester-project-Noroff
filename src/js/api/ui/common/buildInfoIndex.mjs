@@ -6,7 +6,7 @@ import displayLoggedInMenu from "../templates/displayLoggedInMenu.mjs";
 
 export default async function buildInfoIndex() {
   const container = document.getElementById("auctions");
-  const endpoint = "listings?_bids=true&limit=12";
+  const endpoint = "listings?_bids=true&limit=12&_active=true";
 
   const { data, error } = await makeApiCall(endpoint);
 
