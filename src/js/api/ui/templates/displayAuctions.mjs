@@ -3,7 +3,6 @@ import { isLoggedIn } from "../../../helpers/storage.mjs";
 export function displayAuctions(auctions, container) {
   container.innerHTML = "";
   const html = auctions.map((auction) => {
-    console.log(auction);
     return createAuction(auction);
   });
   container.append(...html);
@@ -43,7 +42,6 @@ function createAuction({id, title, media, endsAt, _count, bids }) {
   span.appendChild(i);
 
   const img = document.createElement("img");
-  console.log();
   if (media.length === 0) {
     img.src = "/assets/images/no-image.jpg"
   }else{
