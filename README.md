@@ -1,1 +1,1 @@
-# Semester-project-Noroff
+# Bidzone auction website (Semester Project 2)
