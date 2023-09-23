@@ -3,6 +3,7 @@ import { isLoggedIn } from "../../../helpers/storage.mjs";
 export function displayAuctions(auctions, container) {
   container.innerHTML = "";
   const html = auctions.map((auction) => {
+    console.log(auction);
     return createAuction(auction);
   });
   container.append(...html);

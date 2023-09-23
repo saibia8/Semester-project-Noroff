@@ -6,7 +6,8 @@ import displayLoggedInMenu from "../templates/displayLoggedInMenu.mjs";
 
 export default async function buildInfoIndex() {
   const container = document.getElementById("auctions");
-  const endpoint = "listings?_bids=true&limit=12&_active=true";
+  const endpoint = "listings?sort=created&_bids=true&limit=8&_active=true";
+  const startBidingBtn = document.getElementById("startBiding");
 
   const { data, error } = await makeApiCall(endpoint);
 
@@ -17,6 +18,7 @@ export default async function buildInfoIndex() {
   displayAuctions(data, container);
 
   if (isLoggedIn()) {
+    startBidingBtn.href = "/listings/";
     displayLoggedInMenu();
   }
 }

@@ -63,6 +63,20 @@ export default function displayAuctionDetails(data, container, bided = false) {
   divImage.classList.add("d-flex", "flex-column");
   divColumn.appendChild(divImage);
 
+  const divHeart = document.createElement("div");
+
+  const btn = document.createElement("button");
+  btn.className = "card-heart-btn";
+  divImage.appendChild(btn);
+
+  const span = document.createElement("span");
+  span.className = "heart-icon";
+  btn.appendChild(span);
+
+  const i = document.createElement("i");
+  i.classList.add("bi", "bi-heart");
+  span.appendChild(i);
+
   const imgMain = document.createElement("img");
   imgMain.classList.add("img-fluid", "mt-4", "mb-3", "mx-3");
   if (data.media.length === 0) {
