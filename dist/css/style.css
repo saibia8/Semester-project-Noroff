@@ -10,6 +10,10 @@ textarea:focus::placeholder {
   object-fit: contain;
 }
 
+.time-container {
+  max-width: 17rem;
+}
+
 /*!
  * Bootstrap  v5.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
@@ -11921,7 +11925,8 @@ textarea.form-control-lg {
   all: unset;
 }
 
-.log-out-btn {
+.log-out-btn,
+.subscribe-btn {
   color: #f48f3c;
 }
 
@@ -11939,6 +11944,10 @@ textarea.form-control-lg {
 .back-btn:active {
   background-color: #303136;
   color: white;
+}
+
+.delete-listing-btn {
+  max-width: 20rem;
 }
 
 .heart-icon {
@@ -11967,14 +11976,27 @@ textarea.form-control-lg {
   width: 25px;
 }
 
-.user-icon {
+.user-icon,
+.social-icons {
   color: #fff;
   margin-right: 2rem;
 }
 
 .user-icon:hover,
-.user-icon:active {
+.user-icon:active,
+.social-icons:hover,
+.social-icons:active {
   color: #2eed9d;
+}
+
+.how-icons {
+  font-size: 4rem;
+  color: #f48f3c;
+  filter: drop-shadow(2px 10px 4px rgba(0, 0, 0, 0.1));
+}
+
+.how-gavel-icon {
+  transform: scaleX(-1);
 }
 
 .loader {
@@ -12010,7 +12032,7 @@ textarea.form-control-lg {
 }
 
 .intro-section {
-  background-image: url(../../../assets/images/hand-painted-colorful-terrazzo-pattern.jpg);
+  background-image: url(../../../../assets/images/hand-painted-colorful-terrazzo-pattern.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -12018,6 +12040,7 @@ textarea.form-control-lg {
 .intro-img {
   position: relative;
   top: 6px;
+  width: 300px;
 }
 
 .forgot-password {

@@ -3,6 +3,32 @@ import bid from "../../../handlers/bid.mjs";
 import { displayMessage } from "../common/displayMessage.mjs";
 
 export default function displayAuctionDetails(data, container, bided = false) {
+  const endDate = new Date(data.endsAt);
+  
+  const timer = setInterval(() => {
+    const nowTime = new Date().getTime();
+    const distance = endDate.getTime() - nowTime;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    pDaysNum.textContent = days;
+
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    pHoursNum.textContent = hours;
+
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    pMinutesNum.textContent = minutes;
+
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    pSecondsNum.textContent = seconds;
+
+    if (distance < 0) {
+      clearInterval(timer);
+      divTime2.innerHTML = "Listing ended";
+      divTime2.classList.add("text-uppercase", "bg-danger", "py-2", "text-white", "fw-semibold");
+    }
+  }, 1000);
   const divLoading = document.getElementById("loading");
   divLoading.classList.add("d-none");
   container.innerHTML = "";
@@ -93,9 +119,85 @@ export default function displayAuctionDetails(data, container, bided = false) {
   divColumn2.appendChild(pSeller);
 
   const pCurrentBid = document.createElement("p");
-  pCurrentBid.classList.add("fs-3", "fw-semibold", "mb-5");
+  pCurrentBid.classList.add("fs-3", "fw-semibold", "mb-4");
   pCurrentBid.innerText = `Current bid: ${currentBid} credits`;
   divColumn2.appendChild(pCurrentBid);
+
+  const divTime = document.createElement("div");
+  divTime.classList.add(
+    "d-flex",
+    "bg-white",
+    "justify-content-center",
+    "py-2",
+    "px-1",
+    "align-items-center",
+    "text-center",
+    "mb-4",
+    "time-container"
+  );
+  divColumn2.appendChild(divTime);
+
+  const divTime2 = document.createElement("div");
+  divTime2.classList.add(
+    "d-flex",
+    "flex-fill",
+    "flex-lg-nowrap",
+    "justify-content-center",
+    "align-items-center",
+  );
+  divTime.appendChild(divTime2);
+
+  const divDays = document.createElement("div");
+  divDays.classList.add("d-flex", "flex-column", "border-end", "px-2");
+  divTime2.appendChild(divDays);
+
+  const pDaysNum = document.createElement("p");
+  pDaysNum.className = "mb-0";
+  pDaysNum.textContent = endDate.getDay();
+  divDays.appendChild(pDaysNum);
+  const pDays = document.createElement("p");
+  pDays.className = "mb-0";
+  pDays.innerText = "days";
+  divDays.appendChild(pDays);
+
+  const divHours = document.createElement("div");
+  divHours.classList.add("d-flex", "flex-column", "border-end", "px-2");
+  divTime2.appendChild(divHours);
+
+  const pHoursNum = document.createElement("p");
+  pHoursNum.className = "mb-0";
+  pHoursNum.textContent = endDate.getHours();
+  divHours.appendChild(pHoursNum);
+  const pHours = document.createElement("p");
+  pHours.className = "mb-0";
+  pHours.innerText = "hours";
+  divHours.appendChild(pHours);
+
+  const divMinutes = document.createElement("div");
+  divMinutes.classList.add("d-flex", "flex-column", "border-end", "px-2");
+  divTime2.appendChild(divMinutes);
+
+  const pMinutesNum = document.createElement("p");
+  pMinutesNum.className = "mb-0";
+  pMinutesNum.textContent = endDate.getMinutes();
+  divMinutes.appendChild(pMinutesNum);
+  const pMinutes = document.createElement("p");
+  pMinutes.className = "mb-0";
+  pMinutes.innerText = "minutes";
+  divMinutes.appendChild(pMinutes);
+
+  const divSeconds = document.createElement("div");
+  divSeconds.classList.add("d-flex", "flex-column", "px-2");
+  divTime2.appendChild(divSeconds);
+
+  const pSecondsNum = document.createElement("p");
+  pSecondsNum.className = "mb-0";
+  pSecondsNum.textContent = endDate.getSeconds();
+  divSeconds.appendChild(pSecondsNum);
+  const pSeconds = document.createElement("p");
+  pSeconds.className = "mb-0";
+  pSeconds.innerText = "seconds";
+  divSeconds.appendChild(pSeconds);
 
   const divMessage = document.createElement("div");
   divColumn2.appendChild(divMessage);

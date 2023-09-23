@@ -32,7 +32,8 @@ function createAuction({ id, title, media, endsAt, _count, bids }) {
 
     if (distance < 0) {
       clearInterval(timer);
-      divTime2.innerHTML = "AUCTION FINISHED";
+      divTime2.innerHTML = "Listing ended";
+      divTime2.classList.add("text-uppercase", "bg-danger", "py-2", "text-white", "fw-semibold");
     }
   }, 1000);
 

@@ -165,7 +165,7 @@
         <div class="row">
           <a
             href="../"
-            class="d-flex align-items-center mt-4 text-decoration-none border border-dark rounded-pill col-auto back-btn mb-4"
+            class="d-flex align-items-center mt-4 text-decoration-none border border-dark rounded-pill col-auto back-btn mb-4 ms-3 ms-lg-0"
             ><span><i class="bi bi-arrow-left fs-4 me-2"></i></span>Back to
             listings</a
           >
@@ -178,10 +178,153 @@
       </div>
       <section
         id="auction"
-        class="mb-3 container-lg bg-info rounded-3"
+        class="container-lg bg-info rounded-3 mb-5"
       ></section>
     </main>
 
-    <footer></footer>
+    <!-- Footer -->
+    <footer class="bg-dark text-bg-dark py-4">
+      <div class="container">
+        <div class="row gap-md-0 gap-3 border-bottom border-info">
+          <!-- Contact us section-->
+          <!-- Phone number -->
+          <div
+            class="col-md-4 col-lg-4 pt-1 d-md-block d-lg-flex d-flex justify-content-md-start justify-content-lg-start align-items-start gap-2"
+          >
+            <div class="fs-2"><i class="bi bi-telephone"></i></div>
+            <div class="ms-2">
+              <a
+                href="tel:123456789"
+                class="text-decoration-none d-inline-block"
+                >+123 456 789</a
+              >
+              <p class="mt-1 mb-0">Monday - Friday</p>
+              <p class="mt-1 mb-0">8.00AM - 16.00PM</p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div
+            class="col-md-4 col-lg-4 pt-1 d-md-block d-lg-flex d-flex justify-content-md-start justify-content-lg-center align-items-start gap-2"
+          >
+            <div class="fs-2"><i class="bi bi-envelope"></i></div>
+            <div class="ms-2">
+              <a href="mailto:info@bidzone.com" class="text-decoration-none"
+                >info@bidzone.com</a
+              >
+              <p class="mb-0 mt-1">You can write at any time</p>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div
+            class="col-md-4 col-lg-4 pt-1 d-md-block d-lg-flex d-flex justify-content-md-start justify-content-lg-center align-items-start pb-2 gap-2"
+          >
+            <div class="fs-2"><i class="bi bi-geo-alt"></i></div>
+            <div class="ms-2">
+              <a
+                href="https://maps.app.goo.gl/1yaqURQCzVDpcaHAA"
+                class="text-decoration-none"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google maps - link opens in a new tab"
+                title="Opens in a new tab"
+                >London bridge</a
+              >
+              <p class="mb-0 mt-1">Monday - Friday</p>
+              <p class="mt-1">8.00AM - 16.00PM</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer navigation -->
+        <div
+          class="row text-white mt-5 pb-3 gap-md-0 gap-3 d-flex justify-content-center"
+        >
+          <!-- Logo and newsletter input -->
+          <div class="col-md-4 col-lg-4">
+            <a href="/"
+              ><img
+                src="../../assets/images/Bidzone-logo.png"
+                alt="Bidzone logo"
+                width="180"
+            /></a>
+            <p class="mt-3 mb-2">Get the latest news from Bidzone</p>
+            <form action="/" method="get">
+              <div class="input-group mb-3">
+                <input
+                  type="email"
+                  class="form-control mb-2 mb-lg-0 rounded-3"
+                  placeholder="Your email"
+                  aria-label="User email"
+                  aria-describedby="button-addon2"
+                  pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                  required
+                  title="Only with @ symbol emails are allowed"
+                />
+                <button
+                  class="btn btn-style btn-secondary btn-orange rounded-3"
+                  type="submit"
+                  id="button-addon2"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Footer links -->
+          <div
+            class="col-md-4 col-lg-4 pt-1 m-0 d-flex justify-content-lg-center"
+          >
+            <ul class="p-0">
+              <li class="nav-item list-unstyled mb-2">
+                <a href="/" class="nav-link text-uppercase">Home</a>
+              </li>
+              <li class="nav-item list-unstyled mb-2">
+                <a href="../../listings/" class="nav-link text-uppercase"
+                  >Auction</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Footer social media -->
+          <div
+            class="col-md-4 col-lg-4 pt-1 d-flex justify-content-lg-start flex-column align-items-lg-center align-content-start"
+          >
+            <p class="text-uppercase mb-1">Follow us</p>
+            <div class="ms-0 ms-lg-4">
+              <a
+                href="https://www.facebook.com/"
+                title="Opens Facebook in a new tab"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook link opens in a new tab"
+                ><i
+                  class="bi bi-facebook fs-3 ms-0 ms-lg-4 me-2 social-icons"
+                ></i
+              ></a>
+              <a
+                href="https://www.instagram.com/"
+                title="Opens Instagram in a new tab"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram link opens in a new tab"
+                ><i class="bi bi-instagram fs-3 me-2 social-icons"></i
+              ></a>
+              <a
+                href="https://telegram.org/"
+                title="Opens Telegram in a new tab"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram link opens in a new tab"
+                ><i class="bi bi-telegram fs-3 social-icons"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

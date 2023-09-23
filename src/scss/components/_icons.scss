@@ -28,13 +28,28 @@
   width: 25px;
 }
 
-// User icon
-.user-icon {
+// Nav user icon and footer social media icons
+.user-icon,
+.social-icons {
   color: $white;
   margin-right: 2rem;
 }
 
 .user-icon:hover,
-.user-icon:active {
+.user-icon:active,
+.social-icons:hover,
+.social-icons:active {
   color: $primary;
+}
+
+// How it works section icons on main page
+.how-icons {
+  font-size: 4rem;
+  color: $secondary;
+  filter: drop-shadow(2px 10px 4px rgba(0, 0, 0, 0.1));
+}
+
+// Gavel icon on main page
+.how-gavel-icon {
+  transform: scaleX(-1);
 }
