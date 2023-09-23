@@ -64,13 +64,15 @@ export default function displayAuctionDetails(data, container, bided = false) {
   divColumn.appendChild(divImage);
 
   const divHeart = document.createElement("div");
+  divHeart.classList.add("position-relative");
+  divImage.appendChild(divHeart);
 
   const btn = document.createElement("button");
   btn.className = "card-heart-btn";
-  divImage.appendChild(btn);
+  divHeart.appendChild(btn);
 
   const span = document.createElement("span");
-  span.className = "heart-icon";
+  span.classList.add("heart-icon", "details-heart-icon");
   btn.appendChild(span);
 
   const i = document.createElement("i");
@@ -84,7 +86,7 @@ export default function displayAuctionDetails(data, container, bided = false) {
   } else {
     imgMain.src = `${data.media[0]}`;
   }
-  divImage.appendChild(imgMain);
+  divHeart.appendChild(imgMain);
 
   const divImageSmall = document.createElement("div");
   divImageSmall.classList.add("d-flex", "col-3", "col-md-2", "gap-3", "mx-3");

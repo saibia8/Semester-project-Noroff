@@ -11970,6 +11970,11 @@ textarea.form-control-lg {
   color: #fff;
 }
 
+.details-heart-icon {
+  right: 30px;
+  top: 50px;
+}
+
 .log-out-icon,
 .user-icon {
   height: 25px;
