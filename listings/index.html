@@ -180,12 +180,11 @@
           <div class="col-12 col-sm-8 col-md-4">
             <label for="filter">Sort by</label>
             <select class="form-select mb-4" aria-label="Sort by" id="sortBy">
-              <option selected>Sort by</option>
+              <option value="" disabled selected>Sort by</option>
               <option value="Ending soonest">Ending soonest</option>
+              <option value="Ending latest">Ending latest</option>
               <option value="Newest">Newest</option>
               <option value="Oldest">Oldest</option>
-              <option value="Price low to high">Price (low to high)</option>
-              <option value="Price (high to low)">Price (high to low)</option>
             </select>
           </div>
 
@@ -193,9 +192,9 @@
           <div class="col-12 col-sm-8 col-md-4">
             <label for="filter">Filter</label>
             <select class="form-select" id="filter">
-              <option selected>Filter</option>
-              <option value="New">New</option>
-              <option value="Used">Used</option>
+              <option value="" disabled selected>Filter</option>
+              <option value="Active">Listing Active</option>
+              <option value="Ended">Listing Ended</option>
               <optgroup label="Category">
                 <option value="Electronics">Electronics</option>
                 <option value="Furniture">Furniture</option>
