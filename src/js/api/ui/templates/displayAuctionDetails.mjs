@@ -4,7 +4,7 @@ import { displayMessage } from "../common/displayMessage.mjs";
 
 export default function displayAuctionDetails(data, container, bided = false) {
   const endDate = new Date(data.endsAt);
-  
+
   const timer = setInterval(() => {
     const nowTime = new Date().getTime();
     const distance = endDate.getTime() - nowTime;
@@ -26,7 +26,13 @@ export default function displayAuctionDetails(data, container, bided = false) {
     if (distance < 0) {
       clearInterval(timer);
       divTime2.innerHTML = "Listing ended";
-      divTime2.classList.add("text-uppercase", "bg-danger", "py-2", "text-white", "fw-semibold");
+      divTime2.classList.add(
+        "text-uppercase",
+        "bg-danger",
+        "py-2",
+        "text-white",
+        "fw-semibold"
+      );
     }
   }, 1000);
   const divLoading = document.getElementById("loading");
@@ -95,6 +101,12 @@ export default function displayAuctionDetails(data, container, bided = false) {
   for (let index = 1; index < data.media.length; index++) {
     let imgSmall = document.createElement("img");
     imgSmall.classList.add("img-fluid");
+    imgSmall.style.cursor = "pointer";
+    imgSmall.addEventListener("click", (event) => {
+      let tempSrc = imgMain.src;
+      imgMain.src = event.target.src;
+      event.target.src = tempSrc;
+    });
     imgSmall.src = `${data.media[index]}`;
     divImageSmall.appendChild(imgSmall);
   }
@@ -159,7 +171,7 @@ export default function displayAuctionDetails(data, container, bided = false) {
     "flex-fill",
     "flex-lg-nowrap",
     "justify-content-center",
-    "align-items-center",
+    "align-items-center"
   );
   divTime.appendChild(divTime2);
 
@@ -257,14 +269,31 @@ export default function displayAuctionDetails(data, container, bided = false) {
   divColumn2.appendChild(olBidHistory);
 
   if (data.bids.length !== 0) {
-    data.bids.forEach((element, index) => {
-      const liNoBid = document.createElement("li");
-      liNoBid.classList.add("ps-2", "mb-1");
-      liNoBid.innerText = `${element.bidderName}: ${element.amount} credits`;
-      if (data.bids.length - 1 === index) {
-        liNoBid.classList.add("fw-bolder");
+    data.bids.reverse().forEach((element, index) => {
+      if (index < 5) {
+        const liNoBid = document.createElement("li");
+        liNoBid.classList.add("ps-2", "mb-1");
+        liNoBid.innerText = `${element.bidderName}: ${element.amount} credits`;
+        if (index === 0) {
+          liNoBid.classList.add("fw-bolder");
+        }
+        olBidHistory.appendChild(liNoBid);
+      } else if (data.bids.length - 1 === index) {
+        const moreBidBtn = document.createElement("button");
+        moreBidBtn.innerText = "Show all";
+        olBidHistory.appendChild(moreBidBtn);
+        moreBidBtn.addEventListener("click", () => {
+          data.bids.forEach((element, index) => {
+            if (index >= 5) {
+              moreBidBtn.remove();
+              const liNoBid = document.createElement("li");
+              liNoBid.classList.add("ps-2", "mb-1");
+              liNoBid.innerText = `${element.bidderName}: ${element.amount} credits`;
+              olBidHistory.appendChild(liNoBid);
+            }
+          });
+        });
       }
-      olBidHistory.appendChild(liNoBid);
     });
   } else {
     const liNoBid = document.createElement("li");
