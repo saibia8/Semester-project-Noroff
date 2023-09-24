@@ -14,9 +14,11 @@ export default async function buildInfoAuction() {
   const limitStrUrl = "&limit=";
   const sortUrl = "&sort=";
   const sortOrderUrl = "&sortOrder=";
+  const activeUrl = "&_active=";
   let limitNr = 12;
   let sortStr = "";
   let sortOrderStr = "";
+  let activeBool = "";
   let endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}`;
 
   if (isLoggedIn()) {
@@ -38,7 +40,13 @@ export default async function buildInfoAuction() {
       case "Ending latest":
         sortOrderStr = "";
         sortStr = "endsAt";
-        endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}`;
+
+        if (activeBool !== "") {
+          endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${activeUrl}${activeBool}`;
+        } else {
+          endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}`;
+        }
+
         console.log("ending soonest", endpoint);
 
         const data1 = await makeApiCall(endpoint);
@@ -52,7 +60,13 @@ export default async function buildInfoAuction() {
       case "Ending soonest":
         sortStr = "endsAt";
         sortOrderStr = "asc";
-        endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${sortOrderUrl}${sortOrderStr}`;
+
+        if (activeBool !== "") {
+          endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${sortOrderUrl}${sortOrderStr}${activeUrl}${activeBool}`;
+        } else {
+          endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${sortOrderUrl}${sortOrderStr}`;
+        }
+
         console.log("ending latest", endpoint);
 
         const data2 = await makeApiCall(endpoint);
@@ -66,7 +80,13 @@ export default async function buildInfoAuction() {
       case "Newest":
         sortOrderStr = "";
         sortStr = "created";
-        endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}`;
+
+        if (activeBool !== "") {
+          endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${activeUrl}${activeBool}`;
+        } else {
+          endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}`;
+        }
+
         console.log("newest", endpoint);
 
         const data3 = await makeApiCall(endpoint);
@@ -77,10 +97,16 @@ export default async function buildInfoAuction() {
 
         displayAuctions(data3.data, container);
         break;
-        case "Oldest":
+      case "Oldest":
         sortOrderStr = "asc";
         sortStr = "created";
-        endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${sortOrderUrl}${sortOrderStr}`;
+
+        if (activeBool !== "") {
+          endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${sortOrderUrl}${sortOrderStr}${activeUrl}${activeBool}`;
+        } else {
+          endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${sortOrderUrl}${sortOrderStr}`;
+        }
+
         console.log("oldest", endpoint);
 
         const data4 = await makeApiCall(endpoint);
@@ -94,12 +120,64 @@ export default async function buildInfoAuction() {
     }
   });
 
+  filterInput.addEventListener("change", async (event) => {
+    switch (event.target.value) {
+      case "Active":
+        activeBool = "true";
+        if (sortStr !== "") {
+          if (sortOrderStr !== "") {
+            endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${sortOrderUrl}${sortOrderStr}${activeUrl}${activeBool}`;
+          } else {
+            endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${activeUrl}${activeBool}`;
+          }
+        } else {
+          endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${activeUrl}${activeBool}`;
+        }
+
+        console.log("active", endpoint);
+
+        const data1 = await makeApiCall(endpoint);
+
+        if (data1.error) {
+          return displayMessage("danger", data1.error, container);
+        }
+
+        displayAuctions(data1.data, container);
+        break;
+      case "Ended":
+        activeBool = "false";
+        if (sortStr !== "") {
+          if (sortOrderStr !== "") {
+            endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${sortOrderUrl}${sortOrderStr}${activeUrl}${activeBool}`;
+          } else {
+            endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${activeUrl}${activeBool}`;
+          }
+        } else {
+          endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${activeUrl}${activeBool}`;
+        }
+        console.log("not active", endpoint);
+
+        const data2 = await makeApiCall(endpoint);
+
+        if (data2.error) {
+          return displayMessage("danger", data2.error, container);
+        }
+
+        displayAuctions(data2.data, container);
+        break;
+    }
+  });
+
   loadMoreBtn.addEventListener("click", async () => {
     limitNr += 12;
 
     if (sortStr !== "") {
       if (sortOrderStr !== "") {
-        endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${sortOrderUrl}${sortOrderStr}`;
+        if (activeBool !== "") {
+          endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${sortOrderUrl}${sortOrderStr}${activeUrl}${activeBool}`;
+        } else {
+          endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}${sortOrderUrl}${sortOrderStr}`;
+        }
       } else {
         endpoint = `${listingsBidsUrl}${limitStrUrl}${limitNr}${sortUrl}${sortStr}`;
       }
