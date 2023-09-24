@@ -4,7 +4,7 @@
 
 This is my second-semester project at Noroff School of Technology and Digital Media, which took 5 weeks to complete. My main goal was to use what I've learned in the past three semesters to build an auction website.
 
-[Link to the live website](Dar near)
+[Link to the live website](https://tubular-cat-afc362.netlify.app/)
 
 ## Description
 Bidzone is an online auction platform. To use all its features, you need to log in or create an account. Unregistered users can browse items and see item details. Registered users can access their profiles, check earned credits, view created listings, edit their info, and create new listings. 
