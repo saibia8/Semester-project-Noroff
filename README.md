@@ -2,6 +2,8 @@
 
 <img src="/assets/images/Bidzone-screenshot.jpg" width="500">
 
+This is my second-semester project at Noroff School of Technology and Digital Media, which took 5 weeks to complete. My main goal was to use what I've learned in the past three semesters to build an auction website.
+
 [Link to the live website](Dar near)
 
 ## Description
