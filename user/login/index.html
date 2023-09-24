@@ -29,7 +29,7 @@
   <body class="bg-light-subtle">
     <header class="sticky-top">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-xl">
+        <div class="container-xl gap-2 gap-md-5">
           <!-- Logo -->
           <a href="/" class="navbar-brand"
             ><img
@@ -96,18 +96,25 @@
 
             <!-- Sidebar body -->
             <div
-              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0"
+              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0 justify-content-between"
             >
-              <ul
-                class="navbar-nav justify-content-xl-center align-items-center flex-grow-1 pe-3 gap-2"
-              >
-                <li class="nav-item">
-                  <a class="nav-link text-uppercase" href="/">Home</a>
-                </li>
-                <li class="nav-item me-lg-5">
-                  <a class="nav-link text-uppercase" href="#">Auction</a>
-                </li>
-                <form class="d-flex flex-row mt-5 mt-lg-0" role="search">
+              <div>
+                <ul
+                  class="navbar-nav justify-content-xl-center align-items-center flex-grow-1 pe-3 gap-2"
+                >
+                  <li class="nav-item">
+                    <a class="nav-link text-uppercase" href="/">Home</a>
+                  </li>
+                  <li class="nav-item me-lg-5">
+                    <a class="nav-link text-uppercase" href="../../listings/"
+                      >Auction</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <form class="d-flex flex-row" role="search">
                   <input
                     class="form-control me-2 rounded-pill px-4"
                     type="search"
@@ -133,7 +140,7 @@
                     </svg>
                   </button>
                 </form>
-              </ul>
+              </div>
 
               <!-- Login and Sign up -->
               <div class="d-grid gap-3 d-lg-block">
@@ -167,7 +174,7 @@
               <label for="inputEmail" class="form-label">Email</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1"
+                  <span class="input-group-text"
                     ><i class="bi bi-envelope-fill"></i
                   ></span>
                 </div>
@@ -176,7 +183,7 @@
                   name="email"
                   class="form-control"
                   id="inputEmail"
-                  aria-describedby="emailHelp"
+                  aria-describedby="inputEmail"
                   required
                   pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
                   title="Only @stud.noroff.no domains are allowed to login"
@@ -226,7 +233,7 @@
       </section>
 
       <!-- Create account -->
-      <section class="container-sm text-center">
+      <div class="container-sm text-center">
         <p class="text-dark mt-5 border-top py-2 d-inline-block px-5">
           Not a memeber?<a
             href="../register/"
@@ -234,7 +241,7 @@
             >Create account</a
           >
         </p>
-      </section>
+      </div>
     </main>
   </body>
 </html>

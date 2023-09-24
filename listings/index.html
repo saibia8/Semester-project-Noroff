@@ -33,7 +33,7 @@
   <body class="bg-light-subtle">
     <header class="sticky-top">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-xl">
+        <div class="container-xl gap-2 gap-md-5">
           <!-- Logo -->
           <a href="/" class="navbar-brand"
             ><img
@@ -100,22 +100,23 @@
 
             <!-- Sidebar body -->
             <div
-              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0"
+              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0 justify-content-between"
             >
-              <ul
-                class="navbar-nav justify-content-xl-center align-items-center flex-grow-1 pe-3 gap-2"
-              >
-                <li class="nav-item">
-                  <a class="nav-link text-uppercase" href="/">Home</a>
-                </li>
-                <li class="nav-item me-lg-5">
-                  <a class="nav-link text-uppercase" href="/">Auction</a>
-                </li>
-                <form
-                  id="search"
-                  class="d-flex flex-row mt-5 mt-lg-0"
-                  role="search"
+              <div>
+                <ul
+                  class="navbar-nav justify-content-lg-center align-items-center flex-grow-1 gap-2"
                 >
+                  <li class="nav-item">
+                    <a class="nav-link text-uppercase" href="/">Home</a>
+                  </li>
+                  <li class="nav-item me-lg-5">
+                    <a class="nav-link text-uppercase" href="/">Auction</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <form id="search" class="d-flex flex-row" role="search">
                   <input
                     name="tag"
                     class="form-control me-2 rounded-pill px-4"
@@ -142,7 +143,7 @@
                     </svg>
                   </button>
                 </form>
-              </ul>
+              </div>
 
               <!-- Login and Sign up -->
               <div id="loginOrLogout" class="d-grid gap-3 d-lg-block">
@@ -174,7 +175,7 @@
       </div>
 
       <!-- Sort by and filter section -->
-      <section class="mb-3">
+      <div class="mb-3">
         <div class="container-lg d-md-flex d-block justify-content-between">
           <!-- Sort by -->
           <div class="col-12 col-sm-8 col-md-4">
@@ -203,10 +204,10 @@
             </select>
           </div>
         </div>
-      </section>
+      </div>
 
       <!-- Listing cards section-->
-      <section>
+      <div>
         <div class="container-lg">
           <div
             id="auctions"
@@ -216,7 +217,7 @@
             <span class="loader"></span>
           </div>
         </div>
-      </section>
+      </div>
 
       <!-- Button load more -->
       <div

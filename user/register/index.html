@@ -29,7 +29,7 @@
   <body class="bg-light-subtle">
     <header class="sticky-top">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-xl">
+        <div class="container-xl gap-2 gap-md-5">
           <!-- Logo -->
           <a href="/" class="navbar-brand"
             ><img
@@ -96,20 +96,25 @@
 
             <!-- Sidebar body -->
             <div
-              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0"
+              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0 justify-content-between"
             >
-              <ul
-                class="navbar-nav justify-content-xl-center align-items-center flex-grow-1 pe-3 gap-2"
-              >
-                <li class="nav-item">
-                  <a class="nav-link text-uppercase" href="/">Home</a>
-                </li>
-                <li class="nav-item me-lg-5">
-                  <a class="nav-link text-uppercase" href="/listings/"
-                    >Auction</a
-                  >
-                </li>
-                <form class="d-flex flex-row mt-5 mt-lg-0" role="search">
+              <div>
+                <ul
+                  class="navbar-nav justify-content-xl-center align-items-center flex-grow-1 pe-3 gap-2"
+                >
+                  <li class="nav-item">
+                    <a class="nav-link text-uppercase" href="/">Home</a>
+                  </li>
+                  <li class="nav-item me-lg-5">
+                    <a class="nav-link text-uppercase" href="../../listings/"
+                      >Auction</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <form class="d-flex flex-row" role="search">
                   <input
                     class="form-control me-2 rounded-pill px-4"
                     type="search"
@@ -135,17 +140,17 @@
                     </svg>
                   </button>
                 </form>
-              </ul>
+              </div>
 
               <!-- Login and Sign up -->
               <div class="d-grid gap-3 d-lg-block">
                 <a
-                  href="/user/login/index.html"
+                  href="/user/login/"
                   class="btn btn-primary rounded-pill me-lg-2 text-uppercase btn-lg-block btn-style btn-green"
                   >Login</a
                 >
                 <a
-                  href="../register/index.html"
+                  href="../register/"
                   class="btn btn-secondary rounded-pill text-uppercase btn-lg-block btn-style btn-orange"
                   >Sign up</a
                 >
@@ -182,7 +187,7 @@
                   id="inputUsername"
                   aria-label="Username"
                   required
-                  autocomplete
+                  autocomplete="name"
                   pattern="^[\w]+$"
                   title="Username must only contain lowercase and uppercase letters, numbers and underscore. Example: My_User123"
                 />
@@ -192,7 +197,7 @@
               <label for="inputEmail" class="form-label">Email</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1"
+                  <span class="input-group-text"
                     ><i class="bi bi-envelope-fill"></i
                   ></span>
                 </div>
@@ -201,7 +206,7 @@
                   name="email"
                   class="form-control"
                   id="inputEmail"
-                  aria-describedby="emailHelp"
+                  aria-describedby="inputEmail"
                   required
                   pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
                   title="Only @stud.noroff.no domains are allowed to register"
@@ -212,7 +217,7 @@
               <label for="inputPassword" class="form-label">Password</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1"
+                  <span class="input-group-text"
                     ><i class="bi bi-lock-fill"></i
                   ></span>
                 </div>
@@ -234,7 +239,7 @@
               >
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1"
+                  <span class="input-group-text"
                     ><i class="bi bi-lock-fill"></i
                   ></span>
                 </div>

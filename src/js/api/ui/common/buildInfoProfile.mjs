@@ -12,7 +12,7 @@ export async function buildInfoProfile() {
   const userName = document.getElementById("userName");
   const userCredits = document.getElementById("creditsUser");
   const auctions = document.getElementById("auctions");
-  
+
   if (isLoggedIn()) {
     const endpointProfile = `profiles/${getName()}`;
     const endpointListings = `profiles/${getName()}/listings?_bids=true`;
@@ -23,26 +23,29 @@ export async function buildInfoProfile() {
 
     if (error) {
       return displayMessage("danger", error, container);
-    }  
+    }
 
     pCredits.innerHTML = `Credits: ${data.credits}`;
 
     listeners.setLogoutListener();
-    
-    if (data.avatar) {
-      avatarImg.src = data.avatar;
+
+    const imgUrl = data.avatar;
+
+    if (imgUrl) {
+      avatarImg.src = imgUrl;
+      avatarImg.alt = "Your avatar image";
     }
-    
+
     if (data.name) {
       userName.innerText = data.name;
     }
-    
+
     if (data.credits) {
       userCredits.innerText = data.credits;
     }
 
     const listings = await makeApiCall(endpointListings, options);
-   
+
     if (listings.error) {
       return displayMessage("danger", listings.error, container);
     }

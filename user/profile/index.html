@@ -29,7 +29,7 @@
   <body class="bg-light-subtle">
     <header class="sticky-top">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-xl">
+        <div class="container-xl gap-2 gap-md-5">
           <!-- Logo -->
           <a href="/" class="navbar-brand"
             ><img
@@ -95,26 +95,26 @@
 
             <!-- Sidebar body -->
             <div
-              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0"
+              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0 justify-content-between"
             >
-              <ul
-                class="navbar-nav justify-content-xl-center align-items-center flex-grow-1 gap-2"
-              >
-                <li class="nav-item">
-                  <a class="nav-link text-uppercase" href="/">Home</a>
-                </li>
-                <li class="nav-item me-lg-5">
-                  <a class="nav-link text-uppercase" href="../../listings"
-                    >Auction</a
-                  >
-                </li>
-                <form
-                  id="search"
-                  class="d-flex flex-row mt-5 mt-lg-0"
-                  role="search"
+              <div>
+                <ul
+                  class="navbar-nav justify-content-lg-center align-items-center flex-grow-1 gap-2"
                 >
+                  <li class="nav-item">
+                    <a class="nav-link text-uppercase" href="/">Home</a>
+                  </li>
+                  <li class="nav-item me-lg-5">
+                    <a class="nav-link text-uppercase" href="../../listings/"
+                      >Auction</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <form class="d-flex flex-row" role="search">
                   <input
-                    name="tag"
                     class="form-control me-2 rounded-pill px-4"
                     type="search"
                     placeholder="Search items"
@@ -122,7 +122,7 @@
                   />
                   <button
                     class="btn text-white"
-                    type="submit"
+                    type="button"
                     aria-label="Search"
                   >
                     <svg
@@ -139,7 +139,7 @@
                     </svg>
                   </button>
                 </form>
-              </ul>
+              </div>
 
               <!-- User, user credits and log out -->
               <div
@@ -193,12 +193,6 @@
                 <p id="userName" class="display-5 fw-semibold mb-5">Username</p>
                 <p class="display-6 fs-4 fw-semibold mb-0">Credit balance:</p>
                 <p id="creditsUser" class="display-5 fw-semibold mb-5">1000</p>
-                <a
-                  href="#"
-                  class="text-black display-6 text-decoration-none fs-4 fw-semibold"
-                  >My favorites
-                  <span><i class="bi bi-heart-fill text-secondary"></i></span
-                ></a>
               </div>
               <div>
                 <a
@@ -213,13 +207,13 @@
       </section>
 
       <!-- Create new listing button -->
-      <section class="d-flex justify-content-center align-items-center my-5">
+      <div class="d-flex justify-content-center align-items-center my-5">
         <a
           href="../listing/"
           class="btn btn-secondary btn-lg rounded-pill px-5 mb-4 mb-lg-0 align-items-center fw-medium btn-orange btn-action text-uppercase"
           >Create new listing</a
         >
-      </section>
+      </div>
 
       <!-- My listings section -->
       <section class="mb-5">

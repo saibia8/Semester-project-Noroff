@@ -275,11 +275,12 @@ export default function displayAuctionDetails(data, container, bided = false) {
         liNoBid.classList.add("ps-2", "mb-1");
         liNoBid.innerText = `${element.bidderName}: ${element.amount} credits`;
         if (index === 0) {
-          liNoBid.classList.add("fw-bolder");
+          liNoBid.classList.add("fw-bolder", "fs-5");
         }
         olBidHistory.appendChild(liNoBid);
       } else if (data.bids.length - 1 === index) {
         const moreBidBtn = document.createElement("button");
+        moreBidBtn.classList.add("btn", "btn-primary", "mt-2");
         moreBidBtn.innerText = "Show all";
         olBidHistory.appendChild(moreBidBtn);
         moreBidBtn.addEventListener("click", () => {

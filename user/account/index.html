@@ -29,7 +29,7 @@
   <body class="bg-light-subtle">
     <header class="sticky-top">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-xl">
+        <div class="container-xl gap-2 gap-md-5">
           <!-- Logo -->
           <a href="/" class="navbar-brand"
             ><img
@@ -95,18 +95,25 @@
 
             <!-- Sidebar body -->
             <div
-              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0"
+              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0 justify-content-between"
             >
-              <ul
-                class="navbar-nav justify-content-xl-center align-items-center flex-grow-1 gap-2"
-              >
-                <li class="nav-item">
-                  <a class="nav-link text-uppercase" href="/">Home</a>
-                </li>
-                <li class="nav-item me-lg-5">
-                  <a class="nav-link text-uppercase" href="#">Auction</a>
-                </li>
-                <form class="d-flex flex-row mt-5 mt-lg-0" role="search">
+              <div>
+                <ul
+                  class="navbar-nav justify-content-lg-center align-items-center flex-grow-1 gap-2"
+                >
+                  <li class="nav-item">
+                    <a class="nav-link text-uppercase" href="/">Home</a>
+                  </li>
+                  <li class="nav-item me-lg-5">
+                    <a class="nav-link text-uppercase" href="../../listings/"
+                      >Auction</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <form class="d-flex flex-row" role="search">
                   <input
                     class="form-control me-2 rounded-pill px-4"
                     type="search"
@@ -132,7 +139,7 @@
                     </svg>
                   </button>
                 </form>
-              </ul>
+              </div>
 
               <!-- User, user credits and log out -->
               <div
@@ -200,7 +207,7 @@
               <h2 class="fs-4 border-bottom border-dark mb-3">
                 Personal information
               </h2>
-              <label for="inputUsername" class="form-label"
+              <label for="oldUsername" class="form-label"
                 >Current username</label
               >
               <div class="input-group mb-3">
@@ -216,11 +223,12 @@
               <label for="inputUsername" class="form-label">New username</label>
               <div class="input-group mb-3">
                 <input
+                  id="inputUsername"
                   type="text"
                   class="form-control"
                   name="name"
                   aria-label="Username"
-                  autocomplete
+                  autocomplete="name"
                   pattern="^[\w]+$"
                   title="Username must only contain lowercase and uppercase letters, numbers and underscore. Example: My_User123"
                 />
@@ -230,13 +238,13 @@
               <h2 class="fs-4 border-bottom border-dark mt-5 mb-3">
                 Change email
               </h2>
-              <label for="inputEmail" class="form-label">Current email</label>
+              <label for="oldEmail" class="form-label">Current email</label>
               <div class="input-group mb-3">
                 <input
                   type="email"
                   id="oldEmail"
                   class="form-control"
-                  aria-describedby="emailHelp"
+                  aria-describedby="oldEmail"
                   readonly
                 />
               </div>
@@ -244,10 +252,11 @@
               <label for="inputEmail" class="form-label">New email</label>
               <div class="input-group mb-3">
                 <input
+                  id="inputEmail"
                   type="email"
                   name="email"
                   class="form-control"
-                  aria-describedby="emailHelp"
+                  aria-describedby="inputEmail"
                   pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
                   title="Only @noroff.no or @stud.noroff.no domains are allowed to register"
                 />
