@@ -42,7 +42,7 @@ New users are initially provided with 1000 credits. Users can accumulate more cr
     git clone 
   ```
   ```sh
-    https://github.com/saibia8/
+    https://github.com/saibia8/Semester-project-Noroff.git
   ```
 2. Install npm packages
   ```sh
